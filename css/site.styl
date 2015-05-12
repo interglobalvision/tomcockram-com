@@ -28,6 +28,7 @@ $margin-basic = ($gutter*2)
 $margin-large = ($gutter*5)
 
 $font-size-basic = 15px
+$font-size-logo = 40px
 $font-leading-basic = 1.35em
 $font-tracking-basic = 0.001em
 
@@ -43,9 +44,7 @@ body
   letter-spacing: $font-tracking-basic
 
 h1
-  font-size: 3em
   font-weight: normal
-  text-align: center
 
 h2
   font-size: 2em
@@ -63,9 +62,6 @@ p
 
 a,a:active,a:visited
   color:inherit
-  transition:opacity .2s
-  &:hover
-    opacity:.5
 
 
 // BASIC
@@ -104,11 +100,15 @@ img
   width: 100%
   padding: $margin-small 0
   
+.site-title
+  font-size: $font-size-logo
+  text-align: center
+  
 .nav-item
   display: inline-block
   margin: 0 ( $margin-small / 2 ) 0 0 
   
-.nav-page
+.header-right
   text-align: right
   .nav-item
     margin: 0 0 0 ( $margin-small / 2 )

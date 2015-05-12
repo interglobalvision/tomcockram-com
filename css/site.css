@@ -746,9 +746,7 @@ body {
   letter-spacing: 0.001em;
 }
 h1 {
-  font-size: 3em;
   font-weight: normal;
-  text-align: center;
 }
 h2 {
   font-size: 2em;
@@ -765,13 +763,6 @@ a,
 a:active,
 a:visited {
   color: inherit;
-  -webkit-transition: opacity 0.2s;
-          transition: opacity 0.2s;
-}
-a:hover,
-a:active:hover,
-a:visited:hover {
-  opacity: 0.5;
 }
 html {
   background-color: #fdfdfd;
@@ -801,14 +792,18 @@ img {
   width: 100%;
   padding: 28px 0;
 }
+.site-title {
+  font-size: 40px;
+  text-align: center;
+}
 .nav-item {
   display: inline-block;
   margin: 0 14px 0 0;
 }
-.nav-page {
+.header-right {
   text-align: right;
 }
-.nav-page .nav-item {
+.header-right .nav-item {
   margin: 0 0 0 14px;
 }
 #posts {
