@@ -99,12 +99,19 @@ class IGV_Admin {
 
 		// Set our CMB2 fields
 
-	$cmb->add_field( array(
-    'name' => 'Splash Image',
-    'desc' => '',
-    'id' => $this->prefix . 'splash',
-    'type' => 'file'
-  ) );
+		$cmb->add_field( array(
+		    'name' => 'Splash Image',
+		    'desc' => '',
+		    'id' => $this->prefix . 'splash',
+		    'type' => 'file'
+		  ) );
+
+		$cmb->add_field( array(
+		    'name' => 'Blog URL',
+		    'desc' => '',
+		    'id' => $this->prefix . 'blog_url',
+		    'type' => 'text'
+		  ) );
 
 	}
 
