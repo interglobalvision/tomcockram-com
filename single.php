@@ -9,6 +9,8 @@ get_header();
   <!-- main posts loop -->
   <section id="posts">
 
+    <div class="container">
+
 <?php
 if( have_posts() ) {
   while( have_posts() ) {
@@ -16,8 +18,6 @@ if( have_posts() ) {
 ?>
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
-      <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 
       <?php the_content(); ?>
 
@@ -31,6 +31,7 @@ if( have_posts() ) {
 <?php
 } ?>
 
+    </div>
   <!-- end posts -->
   </section>
 
