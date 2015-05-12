@@ -24,12 +24,13 @@ function errorNotify(error){
   util.log(util.colors.red('Error'), error.message);
 }
 
+
 gulp.task('javascript', function() {
   gulp.src('js/main.js')
   .pipe(sourcemaps.init())
   .pipe(jshint())
   .pipe(jshint.reporter('jshint-stylish'))
-  .pipe(jscs('.jscsrc'))
+  //.pipe(jscs('.jscsrc'))
   .pipe(uglify())
   .on('error', errorNotify)
   .pipe(rename({suffix: '.min'}))
@@ -38,6 +39,7 @@ gulp.task('javascript', function() {
   .pipe(gulp.dest('js'))
   .pipe(notify({ message: 'Javascript task complete' }));
 });
+
 
 gulp.task('javascript-library', function() {
   gulp.src('js/library/*.js')
