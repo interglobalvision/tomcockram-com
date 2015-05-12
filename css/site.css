@@ -748,6 +748,7 @@ body {
 h1 {
   font-size: 3em;
   font-weight: normal;
+  text-align: center;
 }
 h2 {
   font-size: 2em;
@@ -799,6 +800,13 @@ img {
 #header {
   width: 100%;
   padding: 28px 0;
+}
+.nav-item {
+  display: inline-block;
+  margin: 0 14px;
+}
+.nav-page {
+  text-align: right;
 }
 #posts {
   width: 100%;
