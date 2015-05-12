@@ -51,13 +51,25 @@
     <div class="container">
       <div class="row">
         <div class="col col4">
-          CATEGORY NAV
+          <nav class="nav-header">
+            CATEGORY NAV
+          </nav>
         </div>
         <div class="col col4">
           <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
         </div>
         <div class="col col4">
-          PAGE NAV
+          <nav class="nav-header nav-page">
+            <ul>
+              <li class="nav-item"><a href="<?php echo get_permalink(get_id_by_slug('info')); ?>">Info</a></li>
+<?php
+  $blog_url = IGV_get_option('_igv_blog_url');
+  if (! empty($blog_url)) {
+?>
+              <li class="nav-item"><a href="<?php echo $blog_url; ?>">Blog</a></li>
+<?php } ?>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
