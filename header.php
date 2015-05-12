@@ -48,5 +48,17 @@
 
   <!-- start content -->
   <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+    <div class="container">
+      <div class="row">
+        <div class="col col4">
+          CATEGORY NAV
+        </div>
+        <div class="col col4">
+          <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+        </div>
+        <div class="col col4">
+          PAGE NAV
+        </div>
+      </div>
+    </div>
   </header>

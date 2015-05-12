@@ -686,52 +686,52 @@ ul.u-inline-list li {
 }
 .container {
   margin: 0 auto;
-  width: 1272px;
+  width: 1248px;
 }
 .row {
   clear: both;
 }
 .col {
   float: left;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 14px;
+  margin-right: 14px;
   box-sizing: content-box;
 }
 .col1 {
-  width: 90px;
+  width: 76px;
 }
 .col2 {
-  width: 196px;
+  width: 180px;
 }
 .col3 {
-  width: 302px;
+  width: 284px;
 }
 .col4 {
-  width: 408px;
+  width: 388px;
 }
 .col5 {
-  width: 514px;
+  width: 492px;
 }
 .col6 {
-  width: 620px;
+  width: 596px;
 }
 .col7 {
-  width: 726px;
+  width: 700px;
 }
 .col8 {
-  width: 832px;
+  width: 804px;
 }
 .col9 {
-  width: 938px;
+  width: 908px;
 }
 .col10 {
-  width: 1044px;
+  width: 1012px;
 }
 .col11 {
-  width: 1150px;
+  width: 1116px;
 }
 .col12 {
-  width: 1256px;
+  width: 1220px;
 }
 body {
   font-family: helvetica, arial, sans-serif;
@@ -789,6 +789,7 @@ img {
 }
 #header {
   width: 100%;
+  padding: 28px 0;
 }
 #posts {
   width: 100%;
@@ -802,7 +803,7 @@ img {
 #footer {
   width: 100%;
 }
-@media screen and (max-width: 1272px) {
+@media screen and (max-width: 1248px) {
   html {
     width: 100%;
   }
