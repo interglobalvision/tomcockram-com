@@ -19,6 +19,20 @@ jQuery(document).ready(function () {
   	$('#main-container').removeClass('u-hidden');
   }
 
+  // PACKERY
+  if ( $('.js-packery-container').length ) {
+    $('.js-packery-container').imagesLoaded( function() {
+      $('.js-packery-container').packery({
+        itemSelector: '.js-packery-item',
+        columnWidth: 1,
+        gutter: 0,
+        transitionDuration: '0s',
+      }).css({
+        'opacity': 1
+      });
+    });
+  }
+
   //RESIZE
   $(window).on('resize', function() {
   	winHeight = $(window).height();
