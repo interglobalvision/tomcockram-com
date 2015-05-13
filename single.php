@@ -19,7 +19,11 @@ if( have_posts() ) {
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-      <?php the_content(); ?>
+      <div class="js-packery-container">
+
+        <?php the_content(); ?>
+
+      </div>
 
     </article>
 
