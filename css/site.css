@@ -809,6 +809,21 @@ img {
 #posts {
   width: 100%;
 }
+.feed-item-title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.feed-item-img {
+  -webkit-transition: opacity 100ms;
+          transition: opacity 100ms;
+}
+.feed-item-img:hover {
+  opacity: 0.2;
+}
 .single-title {
   font-size: 24px;
 }
