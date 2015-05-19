@@ -52,7 +52,7 @@
       <div class="row">
         <div class="col col4">
 <?php if (is_single()) { ?>
-          <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+          <h1 class="single-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 <?php } else { ?>
           <nav>
             CATEGORY NAV
