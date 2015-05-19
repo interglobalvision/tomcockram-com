@@ -11,18 +11,34 @@ get_header();
 
 <?php
 if( have_posts() ) {
+?>
+    <div class="js-masonry-container">
+<?php
   while( have_posts() ) {
     the_post();
 ?>
 
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+      <div class="js-masonry-item feed-item col">
+        <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+          <a href="<?php the_permalink() ?>">
 
-      <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+            <div class="feed-item-title">
+              <div class="u-holder">
+                <div class="u-held">
+                  <h2 class="u-align-center"><?php the_title(); ?></h2>
+                </div>
+              </div>
+            </div>
 
-    </article>
+            <?php the_post_thumbnail( 'medium', 'class=feed-item-img'); ?>
 
-<?php
-  }
+          </a>
+        </article>
+      </div>
+
+<?php } // END WHILE ?>
+  </div>
+<?php 
 } else {
 ?>
     <article class="u-alert"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
