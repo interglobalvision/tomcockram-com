@@ -66,7 +66,7 @@
 <?php if (is_single()) { ?>
           <div class="header-right">
             <div id="view-toggle" class="u-inline-block u-pointer u-hidden">#</div>
-            <div id="close-single" class="u-inline-block u-pointer">X</div>
+            <a href="<?php echo home_url(); ?>" id="close-single" class="u-inline-block">X</a>
           </div>
 <?php } else { ?>
           <nav class="header-right">
