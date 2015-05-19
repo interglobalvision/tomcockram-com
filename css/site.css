@@ -882,6 +882,7 @@ img {
 }
 #footer {
   width: 100%;
+  min-height: 56px;
 }
 @media screen and (max-width: 1248px) {
   html {
