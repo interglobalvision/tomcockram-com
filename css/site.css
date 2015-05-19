@@ -821,6 +821,10 @@ img {
 .js-packery-item {
   margin-bottom: 28px;
 }
+.slider-item {
+  width: 100%;
+  text-align: center;
+}
 #footer {
   width: 100%;
 }
