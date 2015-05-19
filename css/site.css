@@ -821,14 +821,14 @@ img {
 #pagination {
   width: 100%;
 }
-.packery-content {
+.masonry-content {
   background-color: #fdfdfd;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
 }
-.js-packery-item {
+.js-masonry-item {
   margin-bottom: 28px;
 }
 .slider-content {

@@ -23,13 +23,13 @@ if( have_posts() ) {
 <?php 
     if ($images) {
 ?>  
-      <div class="packery-content">
-        <div class="js-packery-container">
+      <div class="masonry-content">
+        <div class="js-masonry-container">
 <?php 
       $i = 0;
       foreach ($images as $image) {
 ?>
-          <div class="js-packery-item js-single-packery-item col col4 u-pointer" data-index="<?php echo $i; ?>">
+          <div class="js-masonry-item js-single-masonry-item col col4 u-pointer" data-index="<?php echo $i; ?>">
             <img src="<?php echo $image['url']; ?>">
           </div>
 <?php 
