@@ -1,6 +1,8 @@
-**/.DS_Store
-**/node_modules
+.DS_Store
+/node_modules
+/css/.DS_Store
 **/css/site.css
 **/css/site.min.css
-**/js/*.min.js
-**/js/*.min.js.map
+/js/*.min.js
+/js/*.min.js.map
+.gitignore
