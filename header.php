@@ -65,7 +65,8 @@
         <div class="col col4">
 <?php if (is_single()) { ?>
           <div class="header-right">
-            X
+            <div id="view-toggle" class="u-inline-block u-pointer u-hidden">#</div>
+            <div id="close-single" class="u-inline-block u-pointer">X</div>
           </div>
 <?php } else { ?>
           <nav class="header-right">
