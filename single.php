@@ -38,19 +38,22 @@ if( have_posts() ) {
         <div class="slider-container cycle-slideshow" 
         data-cycle-fx="scrollHorz"
         data-cycle-timeout="0"
-        data-cycle-prev="#slider-prev"
-        data-cycle-next="#slider-next">
+        data-cycle-prev=".slider-prev"
+        data-cycle-next=".slider-next"
+        data-cycle-slides=".slider-item">
 <?php 
       foreach ($images as $image) {
 ?>
-          <img src="<?php echo $image['url']; ?>" class="js-slider-item u-pointer">
+          <div class="slider-item">
+            <img src="<?php echo $image['url']; ?>" class="js-slider-item u-pointer slider-next">
+          </div>
 <?php 
       } 
 ?>
         </div>
         <div class="slider-nav">
-          <span id="slider-prev" class="u-pointer">&larr;</span>
-          <span id="slider-next" class="u-pointer">&rarr;</span>
+          <span class="u-pointer slider-prev">&larr;</span>
+          <span class="u-pointer slider-next">&rarr;</span>
       </div>
 <?php } ?>
 
