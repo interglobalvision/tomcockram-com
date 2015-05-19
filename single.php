@@ -51,7 +51,11 @@ if( have_posts() ) {
       foreach ($images as $image) {
 ?>
             <div class="slider-item">
-              <img src="<?php echo $image['url']; ?>" class="slider-img u-pointer slider-next">
+              <div class="u-holder">
+                <div class="u-held">
+                  <img src="<?php echo $image['url']; ?>" class="slider-img u-pointer slider-next">
+                </div>
+              </div>
             </div>
 <?php 
       } 
