@@ -15,15 +15,26 @@ get_header();
 if( have_posts() ) {
   while( have_posts() ) {
     the_post();
+    $images = get_field('gallery');
 ?>
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
+<?php 
+    if ($images) {
+?>
       <div class="js-packery-container">
-
-        <?php the_content(); ?>
-
+<?php 
+      foreach ($images as $image) {
+?>
+        <div class="js-packery-item col col6">
+          <img src="<?php echo $image['url']; ?>">
+        </div>
+<?php 
+      } 
+?>
       </div>
+<?php } ?>
 
     </article>
 
