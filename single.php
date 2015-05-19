@@ -27,12 +27,30 @@ if( have_posts() ) {
 <?php 
       foreach ($images as $image) {
 ?>
-        <div class="js-packery-item col col6">
+        <div class="js-packery-item col col4 u-pointer">
           <img src="<?php echo $image['url']; ?>">
         </div>
 <?php 
       } 
 ?>
+      </div>
+      <div class="slider-wrapper">
+        <div class="slider-container cycle-slideshow" 
+        data-cycle-fx="scrollHorz"
+        data-cycle-timeout="0"
+        data-cycle-prev="#slider-prev"
+        data-cycle-next="#slider-next">
+<?php 
+      foreach ($images as $image) {
+?>
+          <img src="<?php echo $image['url']; ?>" class="js-slider-item u-pointer">
+<?php 
+      } 
+?>
+        </div>
+        <div class="slider-nav">
+          <span id="slider-prev" class="u-pointer">&larr;</span>
+          <span id="slider-next" class="u-pointer">&rarr;</span>
       </div>
 <?php } ?>
 
