@@ -40,7 +40,7 @@ jQuery(document).ready(function () {
   var sliderHeight = winHeight - headerHeight - slideMargin;
 
   if ( $('.slider-content').length ) {
-    $('.slider-img').css('height', sliderHeight );
+    $('.slider-img').css('max-height', sliderHeight );
   }
 
   $('.js-single-masonry-item').on({
