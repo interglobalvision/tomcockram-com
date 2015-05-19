@@ -38,7 +38,7 @@ register_nav_menus( array(
 ) );
 */
 
-get_template_part( 'lib/gallery' );
+//get_template_part( 'lib/gallery' );
 //get_template_part( 'lib/post-types' );
 get_template_part( 'lib/meta-boxes' );
 get_template_part( 'lib/theme-options' );
