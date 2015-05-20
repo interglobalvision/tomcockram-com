@@ -72,7 +72,9 @@ jQuery(document).ready(function () {
   $('#view-toggle').on({
     click: function() {
       $('.slider-content').animate({'opacity' : 0}, animSpeed, function() {
-        $('.masonry-content').css('display','block').animate({'opacity' : 1}, animSpeed);
+        $('.masonry-content').css('display','block')
+        $('.js-masonry-container').masonry();
+        $('.masonry-content').animate({'opacity' : 1}, animSpeed);
         $('.slider-content').addClass('slider-hidden');
         $('#view-toggle').addClass('u-hidden');
       });
