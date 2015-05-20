@@ -37,7 +37,7 @@
   $splash = IGV_get_option('_igv_splash');
   if (! empty($splash) && is_home()) {
 ?>
-  <div id="splash" style="background-image: url(<?php echo $splash; ?>)"></div>
+  <div id="splash" class="u-pointer" style="background-image: url(<?php echo $splash; ?>)"></div>
 
   <section id="main-container" class="splash-margin u-hidden">
 <?php 
