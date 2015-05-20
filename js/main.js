@@ -8,6 +8,7 @@ function l(data) {
 
 var
 	winHeight = $(window).height(),
+  animSpeed = 300,
   headerHeight = $('#header').outerHeight(),
   slideMargin = parseInt( $('#header').css('padding-top'), 10 ),
   slideIndex;
@@ -21,6 +22,10 @@ jQuery(document).ready(function () {
   	$('.splash-margin').css('margin-top', winHeight);
   	$('#main-container').removeClass('u-hidden');
   }
+
+  $('#splash').on('click', function() {
+    $('html, body').animate({ scrollTop: $('#main-container').offset().top }, ( animSpeed * 2 ) ;
+  });
 
   // PACKERY
   if ( $('.js-masonry-container').length ) {
@@ -48,9 +53,9 @@ jQuery(document).ready(function () {
       if ($('.slider-content').hasClass('slider-hidden')) {
         var slideIndex = $(this).attr('data-index');
         $('.cycle-slideshow').cycle('goto', slideIndex);
-        $('.masonry-content').animate({'opacity' : 0}, 300, function() {
+        $('.masonry-content').animate({'opacity' : 0}, animSpeed, function() {
           $('.masonry-content').css('display','none');
-          $('.slider-content').animate({'opacity' : 1}, 300).removeClass('slider-hidden');
+          $('.slider-content').animate({'opacity' : 1}, animSpeed).removeClass('slider-hidden');
           $('#view-toggle').removeClass('u-hidden');
         });
       }
@@ -59,8 +64,8 @@ jQuery(document).ready(function () {
 
   $('#view-toggle').on({
     click: function() {
-      $('.slider-content').animate({'opacity' : 0}, 300, function() {
-        $('.masonry-content').css('display','block').animate({'opacity' : 1}, 300);
+      $('.slider-content').animate({'opacity' : 0}, animSpeed, function() {
+        $('.masonry-content').css('display','block').animate({'opacity' : 1}, animSpeed);
         $('.slider-content').addClass('slider-hidden');
         $('#view-toggle').addClass('u-hidden');
       });
