@@ -37,9 +37,6 @@ if( have_posts() ) {
   <!-- end posts -->
   </section>
 
-  <?php get_template_part('partials/pagination'); ?>
-<!--   >>> no pagination for pages so delete -->
-
 <!-- end main-content -->
 
 </main>
