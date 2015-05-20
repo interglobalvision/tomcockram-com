@@ -7,14 +7,14 @@ function l(data) {
 }
 
 var
-  winHeight = $(window).height(),
-  // >>> imo winHeight is still too shorthand. Better windowHeight for clarity
-  animSpeed = 300,
-  // >>> this too
+  windowHeight = $(window).height(),
+  animationSpeed = 300,
   slideMargin = parseInt( $('#header').css('padding-top'), 10 ),
-  slideIndex,
-  // this slideIndex var is never used
-  headerTop = $('#header').offset().top;
+  headerTop = $('#header').offset().top,
+  headerHeight = $('#header').outerHeight(),
+  sliderHeight = windowHeight - headerHeight - slideMargin,
+  $headerSpacer = $('.js-header-spacer');
+
 
 jQuery(document).ready(function () {
   'use strict';
@@ -22,7 +22,7 @@ jQuery(document).ready(function () {
 
   // SPLASH
   if ($('#splash').length) {
-    $('.splash-margin').css('margin-top', winHeight);
+    $('.splash-margin').css('margin-top', windowHeight);
     $('#main-container').removeClass('u-hidden');
     $(window).on('scroll', function() {
       if ($(window).scrollTop() >= $('#main-container').offset().top && $('#splash').length) {
@@ -31,12 +31,11 @@ jQuery(document).ready(function () {
         $(window).scrollTop(0);
       }
     });
-  }
 
-// >>> put this binding inside the if for perf
-  $('#splash').on('click', function() {
-    $('html, body').animate({ scrollTop: $('#main-container').offset().top }, ( animSpeed * 2 ));
-  });
+    $('#splash').on('click', function() {
+      $('html, body').animate({ scrollTop: $('#main-container').offset().top }, ( animationSpeed * 2 ));
+    });
+  }  
 
   // MASONRY
   if ( $('.js-masonry-container').length ) {
@@ -53,10 +52,6 @@ jQuery(document).ready(function () {
   }
 
   //SLIDER
-  // >>> hoist all variable to top
-  var headerHeight = $('#header').outerHeight();
-  var sliderHeight = winHeight - headerHeight - slideMargin;
-
   if ( $('.slider-content').length ) {
     // >>> this isnt actually working until a window resize. on load this doesnt fire/set the correct value
     $('.slider-img').css('max-height', sliderHeight );
@@ -68,9 +63,9 @@ jQuery(document).ready(function () {
         var slideIndex = $(this).attr('data-index');
 
         $('.cycle-slideshow').cycle('goto', slideIndex);
-        $('.masonry-content').animate({'opacity' : 0}, animSpeed, function() {
+        $('.masonry-content').animate({'opacity' : 0}, animationSpeed, function() {
           $('.masonry-content').css('display','none');
-          $('.slider-content').animate({'opacity' : 1}, animSpeed).removeClass('slider-hidden');
+          $('.slider-content').animate({'opacity' : 1}, animationSpeed).removeClass('slider-hidden');
           $('#view-toggle').removeClass('u-hidden');
         });
       }
@@ -79,21 +74,18 @@ jQuery(document).ready(function () {
 
   $('#view-toggle').on({
     click: function() {
-      $('.slider-content').animate({'opacity' : 0}, animSpeed, function() {
+      $('.slider-content').animate({'opacity' : 0}, animationSpeed, function() {
         $('.masonry-content').css('display','block');
         $('.js-masonry-container').masonry();
-        $('.masonry-content').animate({'opacity' : 1}, animSpeed);
+        $('.masonry-content').animate({'opacity' : 1}, animationSpeed);
         $('.slider-content').addClass('slider-hidden');
         $('#view-toggle').addClass('u-hidden');
       });
     }
   });
 
-  // >>> there are a lot of jquery selectors here that need to be cached. but yes we wait til after ajaxy or not
 
   // STICK HEADER
-  var $headerSpacer = $('.js-header-spacer');
-
   if ($headerSpacer.length) {
     console.log(headerHeight);
     $headerSpacer.css('height', headerHeight);
@@ -106,17 +98,12 @@ jQuery(document).ready(function () {
         headerTop = ( headerHeight * 2 );
       }
 
-      if ($('#header').hasClass('u-fixed')) {
-        if ($(window).scrollTop() < headerTop) {
-          // >>> these double if's could be joined with &&
-          $('#header').removeClass('u-fixed');
-          $headerSpacer.addClass('u-hidden');
-        }
-      } else {
-        if ($(window).scrollTop() > headerTop) {
-          $('#header').addClass('u-fixed');
-          $headerSpacer.removeClass('u-hidden');
-        }
+      if ($('#header').hasClass('u-fixed') && $(window).scrollTop() < headerTop) {
+        $('#header').removeClass('u-fixed');
+        $headerSpacer.addClass('u-hidden');
+      } else if ($(window).scrollTop() > headerTop) {
+        $('#header').addClass('u-fixed');
+        $headerSpacer.removeClass('u-hidden');
       }
 
     });
@@ -124,13 +111,13 @@ jQuery(document).ready(function () {
 
   // RESIZE
   $(window).on('resize', function() {
-    winHeight = $(window).height();
+    windowHeight = $(window).height();
     headerHeight = $('#header').outerHeight();
     slideMargin = parseInt( $('#header').css('padding-top'), 10 );
-    sliderHeight = winHeight - headerHeight - slideMargin;
+    sliderHeight = windowHeight - headerHeight - slideMargin;
 
     if ($('#splash').length) {
-      $('.splash-margin').css('margin-top', winHeight);
+      $('.splash-margin').css('margin-top', windowHeight);
     }
 
     if ( $('.slider-content').length ) {
