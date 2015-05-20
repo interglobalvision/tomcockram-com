@@ -21,6 +21,13 @@ jQuery(document).ready(function () {
   if ($('#splash').length) {
   	$('.splash-margin').css('margin-top', winHeight);
   	$('#main-container').removeClass('u-hidden');
+    $(window).on('scroll', function() {
+      if ($(window).scrollTop() >= $('#main-container').offset().top && $('#splash').length) {
+        $('#splash').remove();
+        $('.splash-margin').css('margin-top', 0);
+        $(window).scrollTop(0)
+      }
+    });
   }
 
   $('#splash').on('click', function() {
