@@ -20,34 +20,35 @@ if( have_posts() ) {
 
     <article <?php post_class('single-article'); ?> id="post-<?php the_ID(); ?>">
 
-<?php 
+<?php
     if ($images) {
-?>  
+?>
       <div class="masonry-content">
         <div class="js-masonry-container">
-<?php 
+<?php
       $i = 0;
       foreach ($images as $image) {
 ?>
           <div class="js-masonry-item js-single-masonry-item col col4 u-pointer" data-index="<?php echo $i; ?>">
             <img src="<?php echo $image['url']; ?>">
+<!--        >>> image size stuff. probably should use different custom image sizes for grid and sliders -->
           </div>
-<?php 
+<?php
         $i++;
-      } 
+      }
 ?>
         </div>
       </div>
 
       <div class="slider-content slider-hidden">
         <div class="slider-wrapper">
-          <div class="slider-container cycle-slideshow" 
+          <div class="slider-container cycle-slideshow"
           data-cycle-fx="scrollHorz"
           data-cycle-timeout="0"
           data-cycle-prev=".slider-prev"
           data-cycle-next=".slider-next"
           data-cycle-slides=".slider-item">
-<?php 
+<?php
       foreach ($images as $image) {
 ?>
             <div class="slider-item">
@@ -57,9 +58,9 @@ if( have_posts() ) {
                 </div>
               </div>
             </div>
-<?php 
-      } 
-?>  
+<?php
+      }
+?>
           </div>
           <div class="slider-nav">
             <span class="u-pointer slider-prev">&larr;</span>

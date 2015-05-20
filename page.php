@@ -21,7 +21,7 @@ if( have_posts() ) {
       <div class="col col12">
 
         <?php the_content(); ?>
-        
+
       </div>
     </article>
 
@@ -38,6 +38,7 @@ if( have_posts() ) {
   </section>
 
   <?php get_template_part('partials/pagination'); ?>
+<!--   >>> no pagination for pages so delete -->
 
 <!-- end main-content -->
 

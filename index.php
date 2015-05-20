@@ -32,6 +32,7 @@ if( have_posts() ) {
                 </div>
 
                 <?php the_post_thumbnail( 'medium', 'class=feed-item-img'); ?>
+<!--            >>> should be use custom image size here? should we use lazyloading technique from master theme? -->
 
               </a>
             </article>
@@ -39,13 +40,13 @@ if( have_posts() ) {
 
 <?php } // END WHILE ?>
         </div>
-<?php 
+<?php
 } else {
 ?>
         <div class="col col12">
           <article class="u-alert"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
         </div>
-      
+
 <?php
 } ?>
 
@@ -55,6 +56,7 @@ if( have_posts() ) {
   </section>
 
   <?php get_template_part('partials/pagination'); ?>
+<!-- >>> what we doing about pagination? -->
 
 <!-- end main-content -->
 

@@ -33,14 +33,14 @@
 <body <?php body_class(); ?>>
 <!--[if lt IE 7]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p><![endif]-->
 
-<?php 
+<?php
   $splash = IGV_get_option('_igv_splash');
   if (! empty($splash) && is_home()) {
 ?>
   <div id="splash" class="u-pointer" style="background-image: url(<?php echo $splash; ?>)"></div>
 
   <section id="main-container" class="splash-margin u-hidden">
-<?php 
+<?php
   } else {
 ?>
   <section id="main-container">
