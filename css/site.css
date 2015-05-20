@@ -880,6 +880,10 @@ img {
 .slider-hidden {
   pointer-events: none;
 }
+article.page {
+  font-size: 24px;
+  line-height: 1.35em;
+}
 #footer {
   width: 100%;
   min-height: 56px;
