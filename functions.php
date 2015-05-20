@@ -32,11 +32,11 @@ if( function_exists( 'add_image_size' ) ) {
 }
 
 // Register Nav Menus
-/*
+
 register_nav_menus( array(
-	'menu_location' => 'Location Name',
+	'category_menu' => 'Category Menu',
 ) );
-*/
+
 
 //get_template_part( 'lib/gallery' );
 //get_template_part( 'lib/post-types' );
