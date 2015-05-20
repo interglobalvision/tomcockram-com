@@ -54,9 +54,7 @@
 <?php if (is_single()) { ?>
           <h1 class="single-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 <?php } else { ?>
-          <nav>
-            CATEGORY NAV
-          </nav>
+          <?php wp_nav_menu('theme_location=category_menu&container=nav'); ?>
 <?php } ?>
         </div>
         <div class="col col4">
@@ -71,12 +69,12 @@
 <?php } else { ?>
           <nav class="header-right">
             <ul>
-              <li class="nav-item"><a href="<?php echo get_permalink(get_id_by_slug('info')); ?>">Info</a></li>
+              <li class="menu-item"><a href="<?php echo get_permalink(get_id_by_slug('info')); ?>">Info</a></li>
 <?php
     $blog_url = IGV_get_option('_igv_blog_url');
     if (! empty($blog_url)) {
 ?>
-              <li class="nav-item"><a href="<?php echo $blog_url; ?>">Blog</a></li>
+              <li class="menu-item"><a href="<?php echo $blog_url; ?>">Blog</a></li>
 <?php } ?>
             </ul>
           </nav>
