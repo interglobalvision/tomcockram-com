@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
   }
 
   $('#splash').on('click', function() {
-    $('html, body').animate({ scrollTop: $('#main-container').offset().top }, ( animSpeed * 2 ) ;
+    $('html, body').animate({ scrollTop: $('#main-container').offset().top }, ( animSpeed * 2 ));
   });
 
   // PACKERY
