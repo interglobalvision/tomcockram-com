@@ -85,6 +85,7 @@ jQuery(document).ready(function () {
   	winHeight = $(window).height();
     headerHeight = $('#header').outerHeight();
     slideMargin = parseInt( $('#header').css('padding-top'), 10 );
+    sliderHeight = winHeight - headerHeight - slideMargin;
 
 		if ($('#splash').length) {
 	  	$('.splash-margin').css('margin-top', winHeight);
