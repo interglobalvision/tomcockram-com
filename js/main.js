@@ -15,7 +15,6 @@ var
   sliderHeight = windowHeight - headerHeight - slideMargin,
   $headerSpacer = $('.js-header-spacer');
 
-
 jQuery(document).ready(function () {
   'use strict';
   l('Hola Globie');
@@ -23,17 +22,17 @@ jQuery(document).ready(function () {
   // SPLASH
   if ($('#splash').length) {
     $('.splash-margin').css('margin-top', windowHeight);
-    $('#main-container').removeClass('u-hidden');
+    $('#main-container').removeClass('u-hidden').css('min-height', windowHeight);
     $(window).on('scroll', function() {
       if ($(window).scrollTop() >= $('#main-container').offset().top && $('#splash').length) {
         $('#splash').remove();
-        $('.splash-margin').css('margin-top', 0);
+        $('.splash-margin').css('margin-top', 0); 
         $(window).scrollTop(0);
       }
     });
 
     $('#splash').on('click', function() {
-      $('html, body').animate({ scrollTop: $('#main-container').offset().top }, ( animationSpeed * 2 ));
+      $('html, body').animate({scrollTop: $('#main-container').offset().top, }, ( animationSpeed * 2 ));
     });
   }  
 
@@ -63,27 +62,26 @@ jQuery(document).ready(function () {
         var slideIndex = $(this).attr('data-index');
 
         $('.cycle-slideshow').cycle('goto', slideIndex);
-        $('.masonry-content').animate({'opacity' : 0}, animationSpeed, function() {
-          $('.masonry-content').css('display','none');
-          $('.slider-content').animate({'opacity' : 1}, animationSpeed).removeClass('slider-hidden');
+        $('.masonry-content').animate({'opacity' : 0,}, animationSpeed, function() {
+          $('.masonry-content').css('display', 'none');
+          $('.slider-content').animate({'opacity' : 1,}, animationSpeed).removeClass('slider-hidden');
           $('#view-toggle').removeClass('u-hidden');
         });
       }
-    }
+    },
   });
 
   $('#view-toggle').on({
     click: function() {
-      $('.slider-content').animate({'opacity' : 0}, animationSpeed, function() {
-        $('.masonry-content').css('display','block');
+      $('.slider-content').animate({'opacity' : 0,}, animationSpeed, function() {
+        $('.masonry-content').css('display', 'block');
         $('.js-masonry-container').masonry();
-        $('.masonry-content').animate({'opacity' : 1}, animationSpeed);
+        $('.masonry-content').animate({'opacity' : 1,}, animationSpeed);
         $('.slider-content').addClass('slider-hidden');
         $('#view-toggle').addClass('u-hidden');
       });
-    }
+    },
   });
-
 
   // STICK HEADER
   if ($headerSpacer.length) {
