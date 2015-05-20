@@ -791,6 +791,14 @@ img {
 #header {
   width: 100%;
   padding: 28px 0;
+  background-color: #fdfdfd;
+  z-index: 5;
+}
+#header.u-fixed {
+  padding: 14px 0;
+}
+#header.u-fixed .site-title {
+  font-size: 24px;
 }
 .site-title {
   font-size: 40px;

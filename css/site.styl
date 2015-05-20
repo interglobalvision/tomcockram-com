@@ -100,6 +100,12 @@ img
 #header
   width: 100%
   padding: $margin-small 0
+  background-color: $color-white-soft
+  z-index: 5
+  &.u-fixed
+    padding: ( $margin-small / 2 ) 0
+    .site-title
+      font-size: $font-size-medium
   
 .site-title
   font-size: $font-size-logo
@@ -189,7 +195,7 @@ img
 .slider-hidden
   pointer-events: none
   
-  
+
 // INFO PAGE
 article.page 
   font-size: $font-size-medium
