@@ -21,7 +21,6 @@ jQuery(document).ready(function () {
 
   // SPLASH
   if ($('#splash').length) {
-//     $('.splash-margin').css('margin-top', windowHeight);
 
     $('#splash').height(windowHeight);
 
@@ -50,6 +49,9 @@ jQuery(document).ready(function () {
       }).css({
         'opacity': 1,
       });
+      if ( $('.feed-item-title').length ) {
+        $('.feed-item-title').css('visibility', 'visible');
+      }
     });
   }
 
@@ -117,8 +119,9 @@ jQuery(document).ready(function () {
     slideMargin = parseInt( $('#header').css('padding-top'), 10 );
     sliderHeight = windowHeight - headerHeight - slideMargin;
 
+    $('#main-container').css('min-height', windowHeight);
+
     if ($('#splash').length) {
-//       $('.splash-margin').css('margin-top', windowHeight);
       $('#splash').height(windowHeight);
     }
 
