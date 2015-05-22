@@ -45,6 +45,7 @@ body
   font-size: $font-size-basic
   line-height: $font-leading-basic
   letter-spacing: $font-tracking-basic
+  visibility: invisible
 
 h1
   font-weight: normal
@@ -81,16 +82,12 @@ img
 // SPLASH
 #splash
   width: 100%
-  height: 400px
+  height: 100vh
   background-size: cover
   background-repeat: no-repeat
   background-position: center
   transition: height $animation-speed-quick
 
-// .splash-margin
-//   z-index: 2
-//   position: relative
-//   background-color: $color-white-soft
 
 // HEADER
 
@@ -130,6 +127,7 @@ img
   top: 0
   left: 0
   z-index: -1
+  visibility: hidden
 
 .feed-item-img
   transition: opacity 100ms
