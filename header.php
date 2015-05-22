@@ -60,8 +60,9 @@
         <div class="col col4">
 <?php if (is_single()) { ?>
           <div class="header-right">
-            <div id="view-toggle" class="u-inline-block u-pointer u-hidden">#</div>
-            <a href="<?php echo home_url(); ?>" id="close-single" class="u-inline-block">X</a>
+            <!--div id="view-toggle" class="u-inline-block u-pointer u-hidden">#</div-->
+            <!--a href="<?php echo home_url(); ?>" id="close-single" class="u-inline-block">X</a-->
+            <div id="close-slider" class="u-inline-block u-pointer u-hidden">&times;</div>
           </div>
 <?php } else { ?>
           <nav class="header-right">
