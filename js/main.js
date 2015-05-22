@@ -21,12 +21,15 @@ jQuery(document).ready(function () {
 
   // SPLASH
   if ($('#splash').length) {
-    $('.splash-margin').css('margin-top', windowHeight);
+//     $('.splash-margin').css('margin-top', windowHeight);
+
+    $('#splash').height(windowHeight);
+
     $('#main-container').removeClass('u-hidden').css('min-height', windowHeight);
     $(window).on('scroll', function() {
       if ($(window).scrollTop() >= $('#main-container').offset().top && $('#splash').length) {
         $('#splash').remove();
-        $('.splash-margin').css('margin-top', 0); 
+        $('.splash-margin').css('margin-top', 0);
         $(window).scrollTop(0);
       }
     });
@@ -34,7 +37,7 @@ jQuery(document).ready(function () {
     $('#splash').on('click', function() {
       $('html, body').animate({scrollTop: $('#main-container').offset().top, }, ( animationSpeed * 2 ));
     });
-  }  
+  }
 
   // MASONRY
   if ( $('.js-masonry-container').length ) {
@@ -115,7 +118,8 @@ jQuery(document).ready(function () {
     sliderHeight = windowHeight - headerHeight - slideMargin;
 
     if ($('#splash').length) {
-      $('.splash-margin').css('margin-top', windowHeight);
+//       $('.splash-margin').css('margin-top', windowHeight);
+      $('#splash').height(windowHeight);
     }
 
     if ( $('.slider-content').length ) {
