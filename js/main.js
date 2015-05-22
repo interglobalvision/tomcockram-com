@@ -70,20 +70,20 @@ jQuery(document).ready(function () {
         $('.masonry-content').animate({'opacity' : 0,}, animationSpeed, function() {
           $('.masonry-content').css('display', 'none');
           $('.slider-content').animate({'opacity' : 1,}, animationSpeed).removeClass('slider-hidden');
-          $('#view-toggle').removeClass('u-hidden');
+          $('#close-slider').removeClass('u-hidden');
         });
       }
     },
   });
 
-  $('#view-toggle').on({
+  $('#close-slider').on({
     click: function() {
       $('.slider-content').animate({'opacity' : 0,}, animationSpeed, function() {
         $('.masonry-content').css('display', 'block');
         $('.js-masonry-container').masonry();
         $('.masonry-content').animate({'opacity' : 1,}, animationSpeed);
         $('.slider-content').addClass('slider-hidden');
-        $('#view-toggle').addClass('u-hidden');
+        $('#close-slider').addClass('u-hidden');
       });
     },
   });
