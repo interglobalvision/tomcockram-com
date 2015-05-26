@@ -186,12 +186,18 @@ img
 
 .slider-nav
   position: absolute
-  top: 49%
-  left: 0
-  width: 100%
-  z-index: 11
-  .slider-next
-    float: right
+  width: 50%
+  height: 100%
+  top: 0
+  z-index: 20 
+  
+.slider-nav.slider-next
+  left: 50%
+  cursor: e-resize
+  
+.slider-nav.slider-prev
+  left: 0%
+  cursor: w-resize
 
 .slider-hidden
   pointer-events: none

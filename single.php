@@ -54,7 +54,7 @@ if( have_posts() ) {
             <div class="slider-item">
               <div class="u-holder">
                 <div class="u-held">
-                  <img src="<?php echo $image['url']; ?>" class="slider-img u-pointer slider-next">
+                  <img src="<?php echo $image['url']; ?>" class="slider-img">
                 </div>
               </div>
             </div>
@@ -62,10 +62,8 @@ if( have_posts() ) {
       }
 ?>
           </div>
-          <div class="slider-nav">
-            <span class="u-pointer slider-prev">&larr;</span>
-            <span class="u-pointer slider-next">&rarr;</span>
-          </div>
+          <div class="slider-nav slider-prev"></div>
+          <div class="slider-nav slider-next"></div>
         </div>
       </div>
 <?php } ?>
