@@ -212,6 +212,434 @@ article.page
 
 // MEDIA QUERIES
 
+// ipad landscape
 @media screen and (max-width: ($col * $cols)+($gutter * $cols))
-  html
-    width: 100%
+  $cols = 12
+  $col = 58px
+  $gutter = 24px
+  .container
+    width: ($col * $cols)+($gutter * $cols)
+  .col
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+  // VARIABLES
+
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
+  $font-size-basic = 15px
+  $font-size-medium = 24px
+  $font-size-logo = 40px
+  
+  // TYPOGRAPHY
+
+  body
+    font-size: $font-size-basic
+
+  // HEADER
+
+  #header
+    padding: $margin-small 0
+    &.u-fixed
+      padding: ( $margin-small / 2 ) 0
+      .site-title
+        font-size: $font-size-medium
+
+  .site-title
+    font-size: $font-size-logo
+
+  .menu-item
+    margin: 0 ( $margin-small / 2 ) 0 0
+
+  .header-right
+    .nav-item
+      margin: 0 0 0 ( $margin-small / 2 )
+
+  // POSTS LOOP
+      
+  #close-slider
+    font-size: $font-size-medium
+
+  .single-title
+    font-size: $font-size-medium
+
+  // PACKERY
+
+  .js-masonry-item
+    margin-bottom: $margin-small
+
+  // INFO PAGE
+    
+  article.page
+    font-size: $font-size-medium
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+    
+
+// ipad portait, iphone 6 & 6 plus landscape
+@media screen and (max-width: 780px)
+  $cols = 12
+  $col = 39px
+  $gutter = 12px
+  .container
+    width: ($col * $cols)+($gutter * $cols)
+  .col
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+  // VARIABLES
+
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
+  $font-size-basic = 12px
+  $font-size-medium = 18px
+  $font-size-logo = 24px
+  
+  // TYPOGRAPHY
+
+  body
+    font-size: $font-size-basic
+
+  // HEADER
+
+  #header
+    padding: $margin-small 0
+    &.u-fixed
+      padding: ( $margin-small / 2 ) 0
+      .site-title
+        font-size: $font-size-medium
+
+  .site-title
+    font-size: $font-size-logo
+
+  .menu-item
+    margin: 0 ( $margin-small / 2 ) 0 0
+
+  .header-right
+    .nav-item
+      margin: 0 0 0 ( $margin-small / 2 )
+
+  // POSTS LOOP
+      
+  #close-slider
+    font-size: $font-size-medium
+
+  .single-title
+    font-size: $font-size-medium
+
+  // PACKERY
+
+  .js-masonry-item
+    margin-bottom: $margin-small
+
+  // INFO PAGE
+    
+  article.page
+    font-size: $font-size-medium
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+
+
+// iphone 5 landscape
+@media screen and (max-width: 612px)
+  $cols = 12
+  $col = 36px
+  $gutter = 8px
+  .container
+    width: ($col * $cols)+($gutter * $cols)
+  .col
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+  // VARIABLES
+
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
+  $font-size-basic = 10px
+  $font-size-medium = 16px
+  $font-size-logo = 21px
+  
+  // TYPOGRAPHY
+
+  body
+    font-size: $font-size-basic
+
+  // HEADER
+
+  #header
+    padding: $margin-small 0
+    &.u-fixed
+      padding: ( $margin-small / 2 ) 0
+      .site-title
+        font-size: $font-size-medium
+
+  .site-title
+    font-size: $font-size-logo
+
+  .menu-item
+    margin: 0 ( $margin-small / 2 ) 0 0
+
+  .header-right
+    .nav-item
+      margin: 0 0 0 ( $margin-small / 2 )
+
+  // POSTS LOOP
+      
+  #close-slider
+    font-size: $font-size-medium
+
+  .single-title
+    font-size: $font-size-medium
+
+  // PACKERY
+
+  .js-masonry-item
+    margin-bottom: $margin-small
+
+  // INFO PAGE
+    
+  article.page
+    font-size: $font-size-medium
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+    
+
+// iphone 4 landscape
+@media screen and (max-width: 528px)
+  $cols = 12
+  $col = 31px
+  $gutter = 8px
+  .container
+    width: ($col * $cols)+($gutter * $cols)
+  .col
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+  // VARIABLES
+
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
+  $font-size-basic = 9px
+  $font-size-medium = 13px
+  $font-size-logo = 17px
+  
+  // TYPOGRAPHY
+
+  body
+    font-size: $font-size-basic
+
+  // HEADER
+
+  #header
+    padding: $margin-small 0
+    &.u-fixed
+      padding: ( $margin-small / 2 ) 0
+      .site-title
+        font-size: $font-size-medium
+
+  .site-title
+    font-size: $font-size-logo
+
+  .menu-item
+    margin: 0 ( $margin-small / 2 ) 0 0
+
+  .header-right
+    .nav-item
+      margin: 0 0 0 ( $margin-small / 2 )
+
+  // POSTS LOOP
+      
+  #close-slider
+    font-size: $font-size-medium
+
+  .single-title
+    font-size: $font-size-medium
+
+  // PACKERY
+
+  .js-masonry-item
+    margin-bottom: $margin-small
+
+  // INFO PAGE
+    
+  article.page
+    font-size: $font-size-medium
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+
+
+// iphone 6 & 6 plus portrait
+@media screen and (max-width: 468px)
+  $cols = 12
+  $col = 21px
+  $gutter = 8px
+  .container
+    width: ($col * $cols)+($gutter * $cols)
+  .col
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+  // VARIABLES
+
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
+  $font-size-basic = 8px
+  $font-size-medium = 12px
+  $font-size-logo = 16px
+  
+  // TYPOGRAPHY
+
+  body
+    font-size: $font-size-basic
+
+  // HEADER
+
+  #header
+    padding: $margin-small 0
+    &.u-fixed
+      padding: ( $margin-small / 2 ) 0
+      .site-title
+        font-size: $font-size-medium
+
+  .site-title
+    font-size: $font-size-logo
+
+  .menu-item
+    margin: 0 ( $margin-small / 2 ) 0 0
+
+  .header-right
+    .nav-item
+      margin: 0 0 0 ( $margin-small / 2 )
+
+  // POSTS LOOP
+      
+  #close-slider
+    font-size: $font-size-medium
+
+  .single-title
+    font-size: $font-size-medium
+
+  // PACKERY
+
+  .js-masonry-item
+    margin-bottom: $margin-small
+
+  // INFO PAGE
+    
+  article.page
+    font-size: $font-size-medium
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+    
+
+// iphone 5 portrait, iphone 4 portrait
+@media screen and (max-width: 348px)
+  $cols = 12
+  $col = 14px
+  $gutter = 12px
+  .container
+    width: ($col * $cols)+($gutter * $cols)
+  .col
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+  // VARIABLES
+
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
+  $font-size-basic = 8px
+  $font-size-medium = 10px
+  $font-size-logo = 13px
+  
+  // TYPOGRAPHY
+
+  body
+    font-size: $font-size-basic
+
+  // HEADER
+
+  #header
+    padding: $margin-small 0
+    &.u-fixed
+      padding: ( $margin-small / 2 ) 0
+      .site-title
+        font-size: $font-size-medium
+
+  .site-title
+    font-size: $font-size-logo
+
+  .menu-item
+    margin: 0 ( $margin-small / 2 ) 0 0
+
+  .header-right
+    .nav-item
+      margin: 0 0 0 ( $margin-small / 2 )
+
+  // POSTS LOOP
+      
+  #close-slider
+    font-size: $font-size-medium
+
+  .single-title
+    font-size: $font-size-medium
+
+  // PACKERY
+
+  .js-masonry-item
+    margin-bottom: $margin-small
+
+  // INFO PAGE
+    
+  article.page
+    font-size: $font-size-medium
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+    
