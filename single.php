@@ -30,8 +30,7 @@ if( have_posts() ) {
       foreach ($images as $image) {
 ?>
           <div class="js-masonry-item js-single-masonry-item col col4 u-pointer" data-index="<?php echo $i; ?>">
-            <img src="<?php echo $image['url']; ?>">
-<!--        >>> image size stuff. probably should use different custom image sizes for grid and sliders -->
+            <img src="<?php echo $image['sizes']['single-thumb']; ?>">
           </div>
 <?php
         $i++;
@@ -54,7 +53,7 @@ if( have_posts() ) {
             <div class="slider-item">
               <div class="u-holder">
                 <div class="u-held">
-                  <img src="<?php echo $image['url']; ?>" class="slider-img">
+                  <img src="<?php echo $image['sizes']['single-full']; ?>" class="slider-img">
                 </div>
               </div>
             </div>
