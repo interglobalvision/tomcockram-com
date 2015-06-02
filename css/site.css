@@ -808,9 +808,6 @@ img {
 .header-right .nav-item {
   margin: 0 0 0 14px;
 }
-#posts {
-  width: 100%;
-}
 .feed-item-title {
   position: absolute;
   width: 100%;
@@ -833,14 +830,8 @@ img {
 .single-title {
   font-size: 24px;
 }
-.post {
-  width: 100%;
-}
 .single-article {
   position: relative;
-}
-#pagination {
-  width: 100%;
 }
 .masonry-content {
   background-color: #fdfdfd;
