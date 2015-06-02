@@ -19,7 +19,7 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 ?>
-          <div class="js-masonry-item feed-item col">
+          <div class="js-masonry-item feed-item col" style="width: <?php echo mt_rand(220, 320); ?>px; margin-bottom: <?php echo mt_rand(50, 200); ?>px; margin-right: <?php echo mt_rand(25, 50); ?>px;">
             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink() ?>">
 
@@ -31,7 +31,7 @@ if( have_posts() ) {
                   </div>
                 </div>
 
-                <?php the_post_thumbnail( 'medium', 'class=feed-item-img'); ?>
+                <?php the_post_thumbnail( 'index-thumb', 'class=feed-item-img'); ?>
 <!--            >>> should be use custom image size here? should we use lazyloading technique from master theme? -->
 
               </a>
