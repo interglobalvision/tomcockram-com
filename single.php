@@ -42,11 +42,11 @@ if( have_posts() ) {
       <div class="slider-content slider-hidden">
         <div class="slider-wrapper">
           <div class="slider-container cycle-slideshow"
-          data-cycle-fx="scrollHorz"
-          data-cycle-timeout="0"
-          data-cycle-prev=".slider-prev"
-          data-cycle-next=".slider-next"
-          data-cycle-slides=".slider-item">
+            data-cycle-fx="scrollHorz"
+            data-cycle-timeout="0"
+            data-cycle-prev=".slider-prev"
+            data-cycle-next=".slider-next"
+            data-cycle-slides=".slider-item">
 <?php
       foreach ($images as $image) {
 ?>

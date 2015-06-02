@@ -57,8 +57,7 @@ jQuery(document).ready(function () {
 
   //SLIDER
   if ( $('.slider-content').length ) {
-    // >>> this isnt actually working until a window resize. on load this doesnt fire/set the correct value
-    $('.slider-img').css('max-height', sliderHeight );
+    $('.slider-item').css('height', sliderHeight );
   }
 
   $('.js-single-masonry-item').on({
@@ -126,7 +125,7 @@ jQuery(document).ready(function () {
     }
 
     if ( $('.slider-content').length ) {
-      $('.slider-img').css('height', sliderHeight );
+      $('.slider-item').css('height', sliderHeight );
     }
   });
 

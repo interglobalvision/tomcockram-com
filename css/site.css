@@ -864,6 +864,9 @@ img {
   height: 100%;
   text-align: center;
 }
+.slider-img {
+  max-height: 100%;
+}
 .slider-nav {
   position: absolute;
   width: 50%;
