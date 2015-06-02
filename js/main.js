@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Modernizr */
+/* global $, jQuery, document */
 
 function l(data) {
   'use strict';
@@ -34,7 +34,7 @@ jQuery(document).ready(function () {
     });
 
     $('#splash').on('click', function() {
-      $('html, body').animate({scrollTop: $('#main-container').offset().top, }, ( animationSpeed * 2 ));
+      $('html, body').animate({scrollTop: $('#main-container').offset().top,}, ( animationSpeed * 2 ));
     });
   }
 
@@ -89,7 +89,6 @@ jQuery(document).ready(function () {
 
   // STICK HEADER
   if ($headerSpacer.length) {
-    console.log(headerHeight);
     $headerSpacer.css('height', headerHeight);
 
     $(window).on('scroll', function() {
