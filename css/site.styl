@@ -29,7 +29,7 @@ $margin-large = ($gutter*5)
 
 $font-size-basic = 15px
 $font-size-medium = 24px
-$font-size-logo = 40px
+$font-size-logo = 36px
 $font-leading-basic = 1.35em
 $font-tracking-basic = 0.001em
 
@@ -38,7 +38,7 @@ $color-white-soft = rgb(253,253,253)
 
 $animation-speed-quick = .2s
 
-// TYPOGRAPHY
+// TYPOGRAPHY 
 
 body
   font-family:'CircularStd-Bold',helvetica,arial,sans-serif
@@ -77,6 +77,9 @@ html
 img
   max-width: 100%
   height: auto
+  
+#main-container
+  position: relative
 
 
 // SPLASH
@@ -92,14 +95,12 @@ img
 // HEADER
 
 #header
+  top: 0
+  position: absolute
   width: 100%
   padding: $margin-small 0
   background-color: $color-white-soft
   z-index: 5
-  &.u-fixed
-    padding: ( $margin-small / 2 ) 0
-    .site-title
-      font-size: $font-size-medium
 
 .site-title
   font-size: $font-size-logo
@@ -113,7 +114,6 @@ img
   text-align: right
   .nav-item
     margin: 0 0 0 ( $margin-small / 2 )
-// >>> does this need to be nested?
 
 // POSTS LOOP
 .feed-item-title
