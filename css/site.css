@@ -823,7 +823,7 @@ img {
 .feed-item-img:hover {
   opacity: 0.2;
 }
-#close-slider {
+.close-x {
   font-size: 24px;
 }
 .single-title {

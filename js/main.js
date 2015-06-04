@@ -24,6 +24,7 @@ var singleProject = {
           $('.masonry-content').css('display', 'none');
           $('.slider-content').animate({'opacity' : 1,}, animationSpeed).removeClass('slider-hidden');
           $('#close-slider').removeClass('u-hidden');
+          $('#close-single').addClass('u-hidden');
         });
       }
   },
@@ -35,6 +36,7 @@ var singleProject = {
       $('.masonry-content').animate({'opacity' : 1,}, animationSpeed);
       $('.slider-content').addClass('slider-hidden');
       $('#close-slider').addClass('u-hidden');
+      $('#close-single').removeClass('u-hidden');
     });
   },
 };
