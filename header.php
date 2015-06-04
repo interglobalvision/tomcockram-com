@@ -81,6 +81,3 @@
       </div>
     </div>
   </header>
-<?php if (is_home()) { ?>
-  <div class="js-header-spacer u-hidden"></div>
-<?php } ?>
