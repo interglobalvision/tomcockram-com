@@ -19,7 +19,7 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 ?>
-          <div class="js-masonry-item feed-item col" style="width: <?php echo mt_rand(220, 320); ?>px; margin-bottom: <?php echo mt_rand(50, 200); ?>px; margin-right: <?php echo mt_rand(25, 50); ?>px;">
+          <div class="js-masonry-item feed-item col" style="width: <?php echo mt_rand(15, 40); ?>%; margin-bottom: <?php echo mt_rand(50, 250); ?>px; margin-right: <?php echo mt_rand(30, 60); ?>px;">
             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink() ?>">
 
