@@ -12,8 +12,7 @@ var
   slideMargin = parseInt( $('#header').css('padding-top'), 10 ),
   headerTop = $('#header').offset().top,
   headerHeight = $('#header').outerHeight(),
-  sliderHeight = windowHeight - headerHeight - slideMargin,
-  $headerSpacer = $('.js-header-spacer');
+  sliderHeight = windowHeight - headerHeight - slideMargin;
 
 var singleProject = {
   openSlideshow: function() {
@@ -122,26 +121,27 @@ jQuery(document).ready(function () {
   });
 
   // STICK HEADER
-  if ($headerSpacer.length) {
-    $headerSpacer.css('height', headerHeight);
+  $('#main-container').css('padding-top', headerHeight);
 
-    $(window).on('scroll', function() {
+  if ($('#splash').length) {
+    $(window).bind('scroll', function() {
+
+      console.log($(window).scrollTop());
 
       if ($('#splash').length) {
         headerTop = $('#header').offset().top;
       } else {
-        headerTop = ( headerHeight * 2 );
+        headerTop = 0;
       }
 
-      if ($('#header').hasClass('u-fixed') && $(window).scrollTop() < headerTop) {
-        $('#header').removeClass('u-fixed');
-        $headerSpacer.addClass('u-hidden');
-      } else if ($(window).scrollTop() > headerTop) {
+      if (!$('#header').hasClass('u-fixed') && $(window).scrollTop() > headerTop) {
         $('#header').addClass('u-fixed');
-        $headerSpacer.removeClass('u-hidden');
+        console.log('fixed');
+        $(window).unbind('scroll');
       }
-
     });
+  } else {
+    $('#header').addClass('u-fixed');
   }
 
   // RESIZE
