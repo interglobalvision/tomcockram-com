@@ -51,7 +51,17 @@
 <?php if (is_single()) { ?>
           <h1 class="single-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 <?php } else { ?>
-          <?php wp_nav_menu('theme_location=category_menu&container=nav'); ?>
+          <nav>
+            <ul>
+              <li class="menu-item"><a href="<?php echo home_url(); ?>">All</a></li>
+              <?php 
+              wp_nav_menu(array(
+                'theme_location'  => 'category_menu',
+                'container'       => '',
+                'items_wrap'      => '%3$s',
+              )); ?>
+            </ul>
+          </nav>
 <?php } ?>
         </div>
         <div class="col col4">
