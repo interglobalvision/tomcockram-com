@@ -1,6 +1,6 @@
 <?php
 
-/* Get post objects for select field options */ 
+/* Get post objects for select field options */
 function get_post_objects( $query_args ) {
 $args = wp_parse_args( $query_args, array(
     'post_type' => 'post',
@@ -38,6 +38,37 @@ function igv_cmb_metaboxes() {
 	 * Metaboxes declarations here
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
+
+  $post_meta = new_cmb2_box( array(
+    'id'            => $prefix . 'metabox',
+    'title'         => __( 'Video Post options', 'cmb2' ),
+    'object_types'  => array( 'post', ), // Post type
+    )
+  );
+
+  $post_meta->add_field( array(
+    'name'       => __( 'Vimeo ID', 'cmb2' ),
+    'desc'       => __( 'just the ID of the vimeo for a video post', 'cmb2' ),
+    'id'         => $prefix . 'vimeo',
+    'type'       => 'text',
+    )
+  );
+
+  $post_meta->add_field( array(
+    'name'       => __( '.webm Video file', 'cmb2' ),
+    'desc'       => __( 'webm video file for video post (optional)', 'cmb2' ),
+    'id'         => $prefix . 'webm',
+    'type'       => 'file',
+    )
+  );
+
+  $post_meta->add_field( array(
+    'name'       => __( '.mp4 Video file', 'cmb2' ),
+    'desc'       => __( 'mp4 fallback video file for video post (optional)', 'cmb2' ),
+    'id'         => $prefix . 'mp4',
+    'type'       => 'file',
+    )
+  );
 
 }
 ?>
