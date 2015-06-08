@@ -239,7 +239,163 @@ article.page
 
 // MEDIA QUERIES
 
-// ipad landscape
+  // iMac 21.5
+
+@media screen and (min-width: 1900px)
+
+  $cols = 12
+  $col = 100px
+  $gutter = 32px
+  .container
+    width: ($col * $cols)+($gutter * $cols)
+  .col
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+  // VARIABLES
+
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
+  $font-size-basic = 15px
+  $font-size-medium = 24px
+  $font-size-logo = 40px
+
+  // TYPOGRAPHY
+
+  body
+    font-size: $font-size-basic
+
+  // HEADER
+
+  #header
+    padding: $margin-small 0
+    &.u-fixed
+      padding: ( $margin-small / 2 ) 0
+      .site-title
+        font-size: $font-size-medium
+
+  .site-title
+    font-size: $font-size-logo
+
+  .menu-item
+    margin: 0 ( $margin-small / 2 ) 0 0
+
+  .header-right
+    .nav-item
+      margin: 0 0 0 ( $margin-small / 2 )
+
+  // POSTS LOOP
+
+  #close-slider
+    font-size: $font-size-medium
+
+  .single-title
+    font-size: $font-size-medium
+
+  // SINGLE
+
+  #single-vimeo-embed
+    margin-bottom: $margin-basic
+
+  // PACKERY
+
+  .js-masonry-item
+    margin-bottom: $margin-small
+
+  // INFO PAGE
+
+  article.page
+    font-size: $font-size-medium
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+
+  // iMac 27
+
+@media screen and (min-width: 2300px)
+
+  $cols = 12
+  $col = 130px
+  $gutter = 34px
+  .container
+    width: ($col * $cols)+($gutter * $cols)
+  .col
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+  // VARIABLES
+
+  $margin-small = ($gutter)
+  $margin-basic = ($gutter*2)
+  $margin-large = ($gutter*5)
+
+  $font-size-basic = 15px
+  $font-size-medium = 24px
+  $font-size-logo = 40px
+
+  // TYPOGRAPHY
+
+  body
+    font-size: $font-size-basic
+
+  // HEADER
+
+  #header
+    padding: $margin-small 0
+    &.u-fixed
+      padding: ( $margin-small / 2 ) 0
+      .site-title
+        font-size: $font-size-medium
+
+  .site-title
+    font-size: $font-size-logo
+
+  .menu-item
+    margin: 0 ( $margin-small / 2 ) 0 0
+
+  .header-right
+    .nav-item
+      margin: 0 0 0 ( $margin-small / 2 )
+
+  // POSTS LOOP
+
+  #close-slider
+    font-size: $font-size-medium
+
+  .single-title
+    font-size: $font-size-medium
+
+  // SINGLE
+
+  #single-vimeo-embed
+    margin-bottom: $margin-basic
+
+  // PACKERY
+
+  .js-masonry-item
+    margin-bottom: $margin-small
+
+  // INFO PAGE
+
+  article.page
+    font-size: $font-size-medium
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+
+  // ipad landscape
 
 @media screen and (max-width: ($col * $cols)+($gutter * $cols))
   $cols = 12
@@ -295,6 +451,11 @@ article.page
 
   .single-title
     font-size: $font-size-medium
+
+  // SINGLE
+
+  #single-vimeo-embed
+    margin-bottom: $margin-basic
 
   // PACKERY
 
@@ -368,6 +529,11 @@ article.page
   .single-title
     font-size: $font-size-medium
 
+  // SINGLE
+
+  #single-vimeo-embed
+    margin-bottom: $margin-basic
+
   // PACKERY
 
   .js-masonry-item
@@ -439,6 +605,11 @@ article.page
 
   .single-title
     font-size: $font-size-medium
+
+  // SINGLE
+
+  #single-vimeo-embed
+    margin-bottom: $margin-basic
 
   // PACKERY
 
@@ -512,6 +683,11 @@ article.page
   .single-title
     font-size: $font-size-medium
 
+  // SINGLE
+
+  #single-vimeo-embed
+    margin-bottom: $margin-basic
+
   // PACKERY
 
   .js-masonry-item
@@ -584,6 +760,11 @@ article.page
   .single-title
     font-size: $font-size-medium
 
+  // SINGLE
+
+  #single-vimeo-embed
+    margin-bottom: $margin-basic
+
   // PACKERY
 
   .js-masonry-item
@@ -655,6 +836,11 @@ article.page
 
   .single-title
     font-size: $font-size-medium
+
+  // SINGLE
+
+  #single-vimeo-embed
+    margin-bottom: $margin-basic
 
   // PACKERY
 
