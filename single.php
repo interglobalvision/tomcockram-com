@@ -16,11 +16,19 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
     $images = get_field('gallery');
+    $meta = get_post_meta($post->ID);
 ?>
 
     <article <?php post_class('single-article'); ?> id="post-<?php the_ID(); ?>">
 
 <?php
+    if ($meta['_igv_vimeo'][0]) {
+?>
+      <div id="single-vimeo-embed" class="u-video-embed-container">
+        <iframe id="vimeo-embed" src="//player.vimeo.com/video/<?php echo $meta['_igv_vimeo'][0]; ?>?badge=0&byline=0&color=FFF&portrait=0&title=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+<?php
+}
     if ($images) {
 ?>
       <div class="masonry-content">
