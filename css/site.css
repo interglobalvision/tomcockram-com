@@ -815,6 +815,8 @@ img {
 .site-title {
   font-size: 36px;
   text-align: center;
+  -webkit-transition: font-size 0.2s;
+          transition: font-size 0.2s;
 }
 .menu-item {
   display: inline-block;
@@ -859,6 +861,20 @@ video {
 }
 #single-vimeo-embed {
   margin-bottom: 56px;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+}
+#single-vimeo-embed.vimeo-hidden {
+  opacity: 0;
+}
+.masonry-content {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+}
+.masonry-hidden {
+  opacity: 0;
 }
 .js-masonry-item {
   margin-bottom: 28px;
@@ -869,8 +885,13 @@ video {
   height: 100%;
   position: absolute;
   top: 0;
-  opacity: 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
   pointer-events: auto;
+}
+.slider-hidden {
+  opacity: 0;
 }
 .slider-wrapper {
   width: 100%;

@@ -37,6 +37,7 @@ $font-tracking-basic = 0.001em
 $color-black-soft = rgb(14, 14, 14)
 $color-white-soft = rgb(253, 253, 253)
 
+$animation-speed-basic = .3s
 $animation-speed-quick = .2s
 
 // TYPOGRAPHY
@@ -110,6 +111,7 @@ img
 .site-title
   font-size: $font-size-logo
   text-align: center
+  transition: font-size $animation-speed-quick
 
 .menu-item
   display: inline-block
@@ -155,14 +157,24 @@ video
 
 #single-vimeo-embed
   margin-bottom: $margin-basic
+  opacity: 1
+  transition: opacity $animation-speed-basic
+  &.vimeo-hidden
+    opacity: 0
 
-// PACKERY
+.masonry-content
+  opacity: 1
+  transition: opacity $animation-speed-basic
+
+.masonry-hidden
+  opacity: 0
+
+  // PACKERY
 
 .js-masonry-item
   margin-bottom: $margin-small
 
-
-// SLIDER
+  // SLIDER
 
 .slider-content
   background-color: $color-white-soft
@@ -170,8 +182,12 @@ video
   height: 100%
   position: absolute
   top: 0
-  opacity: 0
+  opacity: 1
+  transition: opacity $animation-speed-basic
   pointer-events: auto
+
+.slider-hidden
+  opacity: 0
 
 .slider-wrapper
   width: 100%

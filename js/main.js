@@ -20,30 +20,35 @@ var singleProject = {
         var slideIndex = $(this).attr('data-index');
 
         $('.cycle-slideshow').cycle('goto', slideIndex);
-        $('.masonry-content').animate({'opacity' : 0,}, animationSpeed, function() {
-          $('.masonry-content').css('display', 'none');
-          $('.slider-content').animate({'opacity' : 1,}, animationSpeed).removeClass('slider-hidden');
+
+        $('.masonry-content').addClass('masonry-hidden');
+        $('#single-vimeo-embed').addClass('vimeo-hidden');
+        var delay = setTimeout(function() {
+          $('.masonry-content').hide();
+          $('.slider-content').removeClass('slider-hidden');
           $('#close-slider').removeClass('u-hidden');
           $('#close-single').addClass('u-hidden');
-        });
+        }, animationSpeed);
       }
   },
 
   closeSlideshow: function() {
-    $('.slider-content').animate({'opacity' : 0,}, animationSpeed, function() {
-      $('.masonry-content').css('display', 'block');
+
+    $('.slider-content').addClass('slider-hidden');
+    var delay = setTimeout(function() {
+      $('.masonry-content').show();
       $('.js-masonry-container').masonry();
-      $('.masonry-content').animate({'opacity' : 1,}, animationSpeed);
+      $('#single-vimeo-embed').removeClass('vimeo-hidden');
+      $('.masonry-content').removeClass('masonry-hidden');
       $('.slider-content').addClass('slider-hidden');
       $('#close-slider').addClass('u-hidden');
       $('#close-single').removeClass('u-hidden');
-    });
+    }, animationSpeed);
   },
 };
 
 jQuery(document).ready(function () {
   'use strict';
-  l('Hola Globie');
 
   // SPLASH
   if ($('#splash').length) {
@@ -128,8 +133,6 @@ jQuery(document).ready(function () {
   if ($('#splash').length) {
     $(window).bind('scroll', function() {
 
-      console.log($(window).scrollTop());
-
       if ($('#splash').length) {
         headerTop = $('#header').offset().top;
       } else {
@@ -138,7 +141,6 @@ jQuery(document).ready(function () {
 
       if (!$('#header').hasClass('u-fixed') && $(window).scrollTop() > headerTop) {
         $('#header').addClass('u-fixed');
-        console.log('fixed');
         $(window).unbind('scroll');
       }
     });
