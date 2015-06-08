@@ -50,14 +50,17 @@ body
 
 h1
   font-weight: normal
+  line-height: $font-leading-basic
 
 h2
   font-size: 2em
   font-weight: normal
+  line-height: $font-leading-basic
 
 h3
   font-size: 1.5em
   font-weight: normal
+  line-height: $font-leading-basic
 
 p
   margin-bottom: 1em
@@ -126,7 +129,7 @@ img
   z-index: -1
   visibility: hidden
 
-.feed-item-img
+.feed-item-img, video
   transition: opacity 100ms
   &:hover
     opacity: .2
@@ -139,6 +142,10 @@ img
 
 .single-article
   position: relative
+
+video
+  max-width: 100%
+  height: auto
 
 // PACKERY
 .masonry-content
