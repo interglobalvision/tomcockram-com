@@ -128,4 +128,87 @@ function is_single_type($type, $post) {
   }
 }
 
+// GET VIMEO THUMB AND SET AS THUMBNAIL FOR VIDEO POSTS
+
+function save_vimeo_thumb( $post_id ) {
+
+  // Make sure that there is no thumb
+  if ( get_post_thumbnail_id($post_id) ) {
+    error_log('Has thumb');
+    return;
+  }
+
+  // Prevent autosave
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+    return;
+  }
+  // Check the user's permissions
+  if ( !current_user_can( 'edit_post', $post_id ) ) {
+    return;
+  }
+  // OK, it's safe for us to save the data now
+  // Make sure that vimeo ID is set
+  if ( !isset( $_POST['_igv_vimeo'] ) ) {
+    return;
+  }
+  // Sanitize vimeo ID input
+  $vimeo_id = sanitize_text_field( $_POST['_igv_vimeo'] );
+
+  $api_url = 'https://api.vimeo.com/videos/' . $vimeo_id;
+
+  if (!function_exists('curl_init')){
+      die('CURL is not installed!');
+  }
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $api_url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Authorization: bearer a0c52130c00d1382bb992ebc59abc9cf',
+    )
+  );
+  $api_response = json_decode(curl_exec($ch));
+  curl_close($ch);
+
+  $largest_thumbnail = end($api_response->pictures->sizes);
+
+  $thumbnail_url = $largest_thumbnail->link;
+
+  // Upload image from url
+  $upload_dir = wp_upload_dir();
+  // Get the remote image and save to uploads directory
+  $img_name = time().'_'.basename( $thumbnail_url );
+  $img = wp_remote_get( $thumbnail_url );
+
+  if ( is_wp_error( $img ) ) {
+    $error_message = $img->get_error_message();
+    add_action( 'admin_notices', array( $this, 'wprthumb_admin_notice' ) );
+
+  } else {
+    $img = wp_remote_retrieve_body( $img );
+    $fp = fopen( $upload_dir['path'].'/'.$img_name , 'w' );
+    fwrite( $fp, $img );
+    fclose( $fp );
+    $wp_filetype = wp_check_filetype( $img_name , null );
+    $attachment = array(
+      'post_mime_type' => $wp_filetype['type'],
+      'post_title' => preg_replace( '/\.[^.]+$/', '', $img_name ),
+      'post_content' => '',
+      'post_status' => 'inherit'
+    );
+
+    //require for wp_generate_attachment_metadata which generates image related meta-data also creates thumbs
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+    $attach_id = wp_insert_attachment( $attachment, $upload_dir['path'].'/'.$img_name, $post_id );
+
+    //Generate post thumbnail of different sizes.
+    $attach_data = wp_generate_attachment_metadata( $attach_id , $upload_dir['path'].'/'.$img_name );
+    wp_update_attachment_metadata( $attach_id,  $attach_data );
+
+    //Set as featured image.
+    delete_post_meta( $post_id, '_thumbnail_id' );
+    add_post_meta( $post_id , '_thumbnail_id' , $attach_id, true );
+  }
+}
+add_action( 'save_post', 'save_vimeo_thumb' );
+
 ?>
