@@ -24,8 +24,10 @@ if( have_posts() ) {
 <?php
     if ($meta['_igv_vimeo'][0]) {
 ?>
-      <div id="single-vimeo-embed" class="u-video-embed-container">
-        <iframe id="vimeo-embed" src="//player.vimeo.com/video/<?php echo $meta['_igv_vimeo'][0]; ?>?badge=0&byline=0&color=FFF&portrait=0&title=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <div id="single-vimeo-embed">
+        <div class="u-video-embed-container">
+          <iframe id="vimeo-embed" src="//player.vimeo.com/video/<?php echo $meta['_igv_vimeo'][0]; ?>?badge=0&byline=0&color=FFF&portrait=0&title=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
       </div>
 <?php
 }
