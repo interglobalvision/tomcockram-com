@@ -828,6 +828,10 @@ img {
 .header-right .nav-item {
   margin: 0 0 0 14px;
 }
+.feed-item-holder {
+  position: relative;
+  display: inline-block;
+}
 .feed-item-title {
   position: absolute;
   width: 100%;
