@@ -22,7 +22,7 @@ if( have_posts() ) {
     <article <?php post_class('single-article'); ?> id="post-<?php the_ID(); ?>">
 
 <?php
-    if ($meta['_igv_vimeo'][0]) {
+    if (!empty($meta['_igv_vimeo'][0])) {
 ?>
       <div id="single-vimeo-embed">
         <div class="u-video-embed-container">
