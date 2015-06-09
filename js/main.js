@@ -69,6 +69,24 @@ jQuery(document).ready(function () {
     });
   }
 
+  // MENU FILTERS
+
+  $('.js-menu-filter').on({
+    click: function(e) {
+      e.preventDefault();
+      var target = $(this).data('target').toLowerCase();
+      if (target === 'all') {
+        $('.post').show();
+        $('.js-masonry-container').masonry();
+      } else {
+        $('.post').hide();
+        $('.category-' + target).show();
+        $('.js-masonry-container').masonry();
+      }
+
+    }
+  });
+
   // MASONRY
   if ( $('.js-masonry-container').length ) {
     $('.js-masonry-container').imagesLoaded( function() {

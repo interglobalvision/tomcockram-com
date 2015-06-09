@@ -60,7 +60,7 @@
 <?php } else { ?>
           <nav>
             <ul>
-              <li class="menu-item"><a href="<?php echo home_url(); ?>">All</a></li>
+              <li class="menu-item"><a class="js-menu-filter" data-target="all" href="<?php echo home_url(); ?>">All</a></li>
               <?php
               wp_nav_menu(array(
                 'theme_location'  => 'category_menu',

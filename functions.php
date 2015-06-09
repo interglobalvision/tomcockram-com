@@ -95,6 +95,13 @@ function custom_login_logo() {
 add_action( 'login_head', 'custom_login_logo' );
 */
 
+function my_id_attribute ($atts, $item, $args) {
+  $atts['class'] = 'js-menu-filter';
+  $atts['data-target'] = $item->title;
+  return $atts;
+  }
+add_filter('nav_menu_link_attributes', 'my_id_attribute', 3, 10);
+
 // UTILITY FUNCTIONS
 
 // to replace file_get_contents
