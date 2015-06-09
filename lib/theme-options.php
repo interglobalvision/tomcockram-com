@@ -107,6 +107,13 @@ class IGV_Admin {
 		  ) );
 
 		$cmb->add_field( array(
+		    'name' => 'Splash Title Colour',
+		    'desc' => '',
+		    'id' => $this->prefix . 'splash_title_color',
+		    'type' => 'colorpicker'
+		  ) );
+
+		$cmb->add_field( array(
 		    'name' => 'Blog URL',
 		    'desc' => '',
 		    'id' => $this->prefix . 'blog_url',

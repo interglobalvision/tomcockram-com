@@ -35,9 +35,16 @@
 
 <?php
   $splash = IGV_get_option('_igv_splash');
+  $splash_title_colour = IGV_get_option('_igv_splash_title_color');
   if (! empty($splash) && is_home()) {
 ?>
-  <div id="splash" class="u-pointer" style="background-image: url(<?php echo $splash; ?>)"></div>
+  <div id="splash" class="u-pointer" style="background-image: url(<?php echo $splash; ?>)">
+    <div class="u-holder">
+      <div class="u-held u-align-center">
+        <h2 id="splash-title" <?php if (!empty($splash_title_colour)) {echo 'style="color:' . $splash_title_colour . ';"';} ?>><?php bloginfo('name'); ?></h2>
+      </div>
+    </div>
+  </div>
 <?php
   } ?>
 
@@ -54,7 +61,7 @@
           <nav>
             <ul>
               <li class="menu-item"><a href="<?php echo home_url(); ?>">All</a></li>
-              <?php 
+              <?php
               wp_nav_menu(array(
                 'theme_location'  => 'category_menu',
                 'container'       => '',

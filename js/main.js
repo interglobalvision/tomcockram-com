@@ -133,6 +133,10 @@ jQuery(document).ready(function () {
   if ($('#splash').length) {
     $(window).bind('scroll', function() {
 
+      if ($(window).scrollTop() > 0) {
+        $('#splash-title').fadeOut(animationSpeed);
+      }
+
       if ($('#splash').length) {
         headerTop = $('#header').offset().top;
       } else {
