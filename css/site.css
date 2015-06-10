@@ -843,6 +843,7 @@ img {
 }
 .feed-item-img,
 video {
+  width: 100%;
   -webkit-transition: opacity 100ms;
           transition: opacity 100ms;
 }
@@ -860,7 +861,6 @@ video:hover {
   position: relative;
 }
 video {
-  width: 100%;
   max-width: 100%;
   height: auto;
 }
