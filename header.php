@@ -34,9 +34,10 @@
 <!--[if lt IE 9]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
 <?php
+  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
   $splash = IGV_get_option('_igv_splash');
   $splash_title_colour = IGV_get_option('_igv_splash_title_color');
-  if (! empty($splash) && is_home()) {
+  if (!empty($splash) && is_home() && $paged == 1) {
 ?>
   <div id="splash" class="u-pointer" style="background-image: url(<?php echo $splash; ?>)">
     <div class="u-holder">
