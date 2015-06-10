@@ -60,17 +60,28 @@ jQuery(document).ready(function () {
     $('#splash').height(windowHeight);
 
     $('#main-container').removeClass('u-hidden').css('min-height', windowHeight);
+
     $(window).on('scroll', function() {
       if ($(window).scrollTop() >= $('#main-container').offset().top && $('#splash').length) {
-        $('#splash').remove();
-        $('.splash-margin').css('margin-top', 0);
-        $(window).scrollTop(0);
+        hideSplash();
       }
     });
 
     $('#splash').on('click', function() {
       $('html, body').animate({scrollTop: $('#main-container').offset().top,}, ( animationSpeed * 2 ));
     });
+
+    var hideSplash = function() {
+      $('#splash').remove();
+      $('.splash-margin').css('margin-top', 0);
+      $(window).scrollTop(0);
+    };
+  }
+
+  // HOME HASH
+  if(window.location.hash === "#home") {
+    $('html, body').animate({scrollTop: $('#main-container').offset().top,}, ( animationSpeed * 2 ));
+    window.location.hash = "";
   }
 
   // MENU FILTERS

@@ -78,7 +78,7 @@
         <div class="col col4">
 <?php if (is_single()) { ?>
           <div class="header-right">
-            <a id="close-single" class="close-x u-inline-block" href="<?php echo home_url(); ?>">&times;</a>
+            <a id="close-single" class="close-x u-inline-block" href="<?php echo home_url(); ?>/#home">&times;</a>
             <div id="close-slider" class="close-x u-inline-block u-pointer u-hidden">&times;</div>
           </div>
 <?php } else { ?>
