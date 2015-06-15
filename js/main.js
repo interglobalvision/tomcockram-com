@@ -51,6 +51,13 @@ var singleProject = {
   },
 };
 
+// HOME HASH
+if(window.location.hash === "#home") {
+  $('html, body').animate({scrollTop: $('#main-container').offset().top,}, ( animationSpeed ));
+  window.location.hash = "";
+}
+
+
 jQuery(document).ready(function () {
   'use strict';
 
@@ -76,12 +83,6 @@ jQuery(document).ready(function () {
       $('.splash-margin').css('margin-top', 0);
       $(window).scrollTop(0);
     };
-  }
-
-  // HOME HASH
-  if(window.location.hash === "#home") {
-    $('html, body').animate({scrollTop: $('#main-container').offset().top,}, ( animationSpeed * 2 ));
-    window.location.hash = "";
   }
 
   // MENU FILTERS
