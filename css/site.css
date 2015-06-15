@@ -808,15 +808,13 @@ img {
   top: 0;
   position: absolute;
   width: 100%;
-  padding: 28px 0;
+  padding: 14px 0;
   background-color: #fdfdfd;
   z-index: 5;
 }
 .site-title {
   font-size: 36px;
   text-align: center;
-  -webkit-transition: font-size 0.2s;
-          transition: font-size 0.2s;
 }
 .menu-item {
   display: inline-block;
@@ -987,13 +985,7 @@ article.page {
     font-size: 15px;
   }
   #header {
-    padding: 32px 0;
-  }
-  #header.u-fixed {
     padding: 16px 0;
-  }
-  #header.u-fixed .site-title {
-    font-size: 24px;
   }
   .site-title {
     font-size: 40px;
@@ -1071,13 +1063,7 @@ article.page {
     font-size: 15px;
   }
   #header {
-    padding: 34px 0;
-  }
-  #header.u-fixed {
     padding: 17px 0;
-  }
-  #header.u-fixed .site-title {
-    font-size: 24px;
   }
   .site-title {
     font-size: 40px;
@@ -1155,13 +1141,7 @@ article.page {
     font-size: 15px;
   }
   #header {
-    padding: 24px 0;
-  }
-  #header.u-fixed {
     padding: 12px 0;
-  }
-  #header.u-fixed .site-title {
-    font-size: 24px;
   }
   .site-title {
     font-size: 40px;
@@ -1239,13 +1219,7 @@ article.page {
     font-size: 12px;
   }
   #header {
-    padding: 12px 0;
-  }
-  #header.u-fixed {
     padding: 6px 0;
-  }
-  #header.u-fixed .site-title {
-    font-size: 18px;
   }
   .site-title {
     font-size: 24px;
@@ -1323,13 +1297,7 @@ article.page {
     font-size: 10px;
   }
   #header {
-    padding: 8px 0;
-  }
-  #header.u-fixed {
     padding: 4px 0;
-  }
-  #header.u-fixed .site-title {
-    font-size: 16px;
   }
   .site-title {
     font-size: 21px;
@@ -1407,13 +1375,7 @@ article.page {
     font-size: 9px;
   }
   #header {
-    padding: 8px 0;
-  }
-  #header.u-fixed {
     padding: 4px 0;
-  }
-  #header.u-fixed .site-title {
-    font-size: 13px;
   }
   .site-title {
     font-size: 17px;
@@ -1491,13 +1453,7 @@ article.page {
     font-size: 8px;
   }
   #header {
-    padding: 8px 0;
-  }
-  #header.u-fixed {
     padding: 4px 0;
-  }
-  #header.u-fixed .site-title {
-    font-size: 12px;
   }
   .site-title {
     font-size: 16px;
@@ -1575,13 +1531,7 @@ article.page {
     font-size: 8px;
   }
   #header {
-    padding: 12px 0;
-  }
-  #header.u-fixed {
     padding: 6px 0;
-  }
-  #header.u-fixed .site-title {
-    font-size: 10px;
   }
   .site-title {
     font-size: 13px;
