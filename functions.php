@@ -135,6 +135,15 @@ function is_single_type($type, $post) {
   }
 }
 
+// MOST POSTS PER PAGE ON HOME
+
+function posts_per_page( $query ) {
+  if ( $query->is_main_query() ) {
+      $query->set( 'posts_per_page', 30 );
+  }
+}
+add_action( 'pre_get_posts', 'posts_per_page' );
+
 // GET VIMEO THUMB AND SET AS THUMBNAIL FOR VIDEO POSTS
 
 function save_vimeo_thumb( $post_id ) {
