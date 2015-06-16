@@ -260,8 +260,32 @@ article.page
   width: 100%
   min-height: $margin-basic
 
+// LOADING
+#loading
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 99
+  display: none
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  animation: 'loading' $animation-speed-basic*2 infinite
 
-// MEDIA QUERIES
+  &.on
+    display: flex
+
+@keyframes loading
+  0%
+    opacity: 0.8
+  33%
+    opacity: 0.5
+  66%
+    opacity: 0.8
+
+    
+  // MEDIA QUERIES
 
   // iMac 21.5
 

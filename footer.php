@@ -2,6 +2,9 @@
     </footer>
 
   </section>
+  <div id="loading" class="u-fixed">
+    <p>loading<span>...</span></p>
+  </div>
 
   <?php get_template_part('partials/scripts'); ?>
 

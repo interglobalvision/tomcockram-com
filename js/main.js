@@ -24,6 +24,7 @@ Ajaxy = {
 
       var url = event.currentTarget.href;
 
+      $('#loading').addClass('on');
       $('#main-content').addClass('main-content-hidden');
       $('#header').addClass('header-hidden');
       _this.ajaxLoad(url);
@@ -54,6 +55,7 @@ Ajaxy = {
         setTimeout( function() {
           $('#main-content').removeClass('main-content-hidden');
           $('#header').removeClass('header-hidden');
+          $('#loading').removeClass('on');
         }, animationSpeed);
       },
     });
