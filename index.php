@@ -22,7 +22,7 @@ if( have_posts() ) {
 ?>
           <div class="js-masonry-item feed-item col" style="width: <?php echo mt_rand(15, 40); ?>%; margin-bottom: <?php echo mt_rand(50, 250); ?>px; margin-right: <?php echo mt_rand(30, 60); ?>px;">
             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-              <a href="<?php the_permalink() ?>">
+              <a href="<?php the_permalink() ?>" class="ajax-link">
                 <div class="feed-item-holder">
                   <div class="feed-item-title">
                     <div class="u-holder">
