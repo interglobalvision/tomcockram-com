@@ -24,6 +24,8 @@ Ajaxy = {
 
       var url = event.currentTarget.href;
 
+    $('#main-content').addClass('main-content-hidden');
+
       _this.ajaxLoad(url);
 
     });
@@ -49,6 +51,9 @@ Ajaxy = {
 
       success: function(data) {
         _this.ajaxSuccess(data, url);
+        setTimeout( function() {
+          $('#main-content').removeClass('main-content-hidden');
+        }, animationSpeed);
       },
     });
   },
