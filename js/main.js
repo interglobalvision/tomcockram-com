@@ -8,20 +8,19 @@ function l(data) {
 
 var
   windowHeight = $(window).height(),
-  animationSpeed = 300,
+  animationSpeed = 700,
+  animationSpeedFast = 300,
   slideMargin = parseInt( $('#header').css('padding-top'), 10 ),
   headerTop = $('#header').offset().top,
   headerHeight = $('#header').outerHeight(),
   sliderHeight = windowHeight - headerHeight - slideMargin;
 
 var singleProject = {
-  openSlideshow: function() {
+  openSlideshow: function(slide) {
     if ($('.slider-content').hasClass('slider-hidden')) {
         var delay;
-        var slideIndex = $(this).attr('data-index');
 
-        $('.cycle-slideshow').cycle('goto', slideIndex);
-
+        $('.cycle-slideshow').cycle('goto', slide);
         $('.masonry-content').addClass('masonry-hidden');
         $('#single-vimeo-embed').addClass('vimeo-hidden');
 
@@ -52,11 +51,10 @@ var singleProject = {
 };
 
 // HOME HASH
-if(window.location.hash === "#home") {
-  $('html, body').animate({scrollTop: $('#main-container').offset().top,}, ( animationSpeed ));
-  window.location.hash = "";
+if(window.location.hash === '#home') {
+  $('#splash').remove();
+  window.location.hash = '';
 }
-
 
 jQuery(document).ready(function () {
   'use strict';
@@ -75,7 +73,7 @@ jQuery(document).ready(function () {
     });
 
     $('#splash').on('click', function() {
-      $('html, body').animate({scrollTop: $('#main-container').offset().top,}, ( animationSpeed * 2 ));
+      $('html, body').animate({scrollTop: $('#main-container').offset().top,}, animationSpeed);
     });
 
     var hideSplash = function() {
@@ -152,7 +150,8 @@ jQuery(document).ready(function () {
 
   $('.js-single-masonry-item').on({
     click: function() {
-      singleProject.openSlideshow();
+      var index = $(this).data('index');
+      singleProject.openSlideshow(index);
     },
   });
 
