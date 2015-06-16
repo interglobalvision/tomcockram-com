@@ -977,8 +977,8 @@ article.page {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: 'loading' 0.6s infinite;
-          animation: 'loading' 0.6s infinite;
+  -webkit-animation: 'loading' 0.6s ease infinite;
+          animation: 'loading' 0.6s ease infinite;
 }
 #loading.on {
   display: -webkit-box;
