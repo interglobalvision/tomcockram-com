@@ -19,13 +19,12 @@ Ajaxy = {
   init: function() {
     var _this = this;
 
-    $('.ajax-link').click( function(event) {
+    $('a.ajax-link').click( function(event) {
       event.preventDefault();
 
       var url = event.currentTarget.href;
 
-    $('#main-content').addClass('main-content-hidden');
-
+      $('#main-content').addClass('main-content-hidden');
       _this.ajaxLoad(url);
 
     });
@@ -85,7 +84,8 @@ Ajaxy = {
  * This function wraps everything that needs to run on each load; onload or after ajax load
  */
 siteInit = function() {
-  
+
+  // AJAXY
   Ajaxy.init();
 
   $('.cycle-slideshow').cycle();
@@ -126,9 +126,6 @@ siteInit = function() {
 
   jQuery(document).ready(function () {
     'use strict';
-
-    // AJAXY
-    Ajaxy.init();
 
     // SPLASH
     if ($('#splash').length) {
