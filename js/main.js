@@ -9,7 +9,6 @@ function l(data) {
 var
   windowHeight = $(window).height(),
   animationSpeed = 700,
-  animationSpeedFast = 300,
   slideMargin = parseInt( $('#header').css('padding-top'), 10 ),
   headerTop = $('#header').offset().top,
   headerHeight = $('#header').outerHeight(),
@@ -151,6 +150,7 @@ jQuery(document).ready(function () {
   $('.js-single-masonry-item').on({
     click: function() {
       var index = $(this).data('index');
+
       singleProject.openSlideshow(index);
     },
   });
