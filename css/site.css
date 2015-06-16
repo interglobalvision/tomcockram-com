@@ -820,6 +820,20 @@ img {
   background-color: #fdfdfd;
   z-index: 5;
 }
+#header .single-title,
+#header .header-right,
+#header nav {
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+  opacity: 1;
+}
+#header.header-hidden .single-title,
+#header.header-hidden .header-right,
+#header.header-hidden nav {
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+  opacity: 0;
+}
 .site-title {
   font-size: 36px;
   text-align: center;

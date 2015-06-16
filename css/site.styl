@@ -113,6 +113,21 @@ img
   background-color: $color-white-soft
   z-index: 5
 
+#header
+  & .single-title,
+  & .header-right,
+  nav
+    transition: opacity $animation-speed-basic
+    opacity: 1
+
+#header.header-hidden
+  & .single-title,
+  & .header-right,
+  nav
+    transition: opacity $animation-speed-basic
+    opacity: 0
+
+
 .site-title
   font-size: $font-size-logo
   text-align: center
