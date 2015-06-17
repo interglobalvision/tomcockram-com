@@ -71,8 +71,20 @@ if( have_posts() ) {
       }
 ?>
           </div>
-          <div class="slider-nav slider-prev"></div>
-          <div class="slider-nav slider-next"></div>
+          <div class="slider-nav slider-prev u-pointer">
+            <div class="u-holder">
+              <div class="u-held">
+                &larr;
+              </div>
+            </div>
+          </div>
+          <div class="slider-nav slider-next u-pointer u-align-right">
+            <div class="u-holder">
+              <div class="u-held">
+                &rarr;
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 <?php } ?>

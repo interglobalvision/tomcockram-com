@@ -865,7 +865,7 @@ img {
   display: none;
 }
 .mobile-or-tablet video {
-  display: none;
+  display: nonesl;
 }
 .mobile-or-tablet .no-video-thumb {
   display: block;
@@ -948,14 +948,8 @@ video {
   height: 100%;
   top: 0;
   z-index: 20;
-}
-.slider-nav.slider-next {
-  left: 50%;
-  cursor: url("../img/arrow-right.png"), auto;
-}
-.slider-nav.slider-prev {
-  left: 0%;
-  cursor: url("../img/arrow-left.png"), auto;
+  box-sizing: border-box;
+  padding: 14px;
 }
 .slider-hidden {
   pointer-events: none;
