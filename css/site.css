@@ -861,6 +861,15 @@ img {
   z-index: -1;
   visibility: hidden;
 }
+.no-video-thumb {
+  display: none;
+}
+.mobile-or-tablet video {
+  display: none;
+}
+.mobile-or-tablet .no-video-thumb {
+  display: block;
+}
 .feed-item-img,
 video {
   width: 100%;

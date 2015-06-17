@@ -157,6 +157,15 @@ img
   z-index: -1
   visibility: hidden
 
+.no-video-thumb
+  display: none
+
+.mobile-or-tablet
+  video
+    display: none
+  .no-video-thumb
+    display: block
+
 .feed-item-img, video
   width: 100%
   transition: opacity 100ms
@@ -284,7 +293,7 @@ article.page
   66%
     opacity: 0.8
 
-    
+
   // MEDIA QUERIES
 
   // iMac 21.5

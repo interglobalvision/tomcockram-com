@@ -40,6 +40,9 @@ if( have_posts() ) {
                     <source src="<?php echo $meta['_igv_webm'][0]; ?>" type='video/webm'/>
                     <source src="<?php echo $meta['_igv_mp4'][0]; ?>" type='video/mp4'/>
                   </video>
+                  <div class="no-video-thumb">
+                    <?php the_post_thumbnail( 'index-thumb', 'class=feed-item-img'); ?>
+                  </div>
 <?php
   } else {
   the_post_thumbnail( 'index-thumb', 'class=feed-item-img');
