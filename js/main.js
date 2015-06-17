@@ -75,7 +75,7 @@ Ajaxy = {
   ajaxErrorHandler: function(jqXHR, textStatus, errorThrown) {
   },
 
-  ajaxSuccess: function(data,url) { 
+  ajaxSuccess: function(data,url) {
 
     // Convert data into proper html to be able to fully parse thru jQuery
     var respHtml = document.createElement('html');
@@ -104,7 +104,7 @@ Ajaxy = {
 
 /*
  * siteInit()
- * 
+ *
  * This function wraps everything that needs to run on each load; onload or after ajax load
  */
 siteInit = function() {
@@ -215,6 +215,7 @@ siteInit = function() {
     //SLIDER
     if ( $('.slider-content').length ) {
       $('.slider-item').css('height', sliderHeight );
+      $('.slider-img').css('max-height', sliderHeight );
 
       $(document).keydown( function(e) {
         switch(e.which) {
@@ -295,6 +296,7 @@ siteInit = function() {
 
       if ( $('.slider-content').length ) {
         $('.slider-item').css('height', sliderHeight );
+        $('.slider-img').css('max-height', sliderHeight );
       }
     });
 
