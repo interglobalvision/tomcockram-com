@@ -39,7 +39,7 @@ if( have_posts() ) {
       $i = 0;
       foreach ($images as $image) {
 ?>
-          <div class="js-masonry-item js-single-masonry-item col u-pointer" style="width: <?php echo mt_rand(15, 40); ?>%; margin-bottom: <?php echo mt_rand(50, 250); ?>px; margin-right: <?php echo mt_rand(30, 60); ?>px;" data-index="<?php echo $i; ?>">
+          <div class="js-masonry-item js-single-masonry-item col u-pointer" style="width: <?php echo mt_rand(15, 37); ?>%; margin-bottom: <?php echo mt_rand(30, 100); ?>px; margin-right: <?php echo mt_rand(20, 50); ?>px;" data-index="<?php echo $i; ?>">
             <img src="<?php echo $image['sizes']['single-thumb']; ?>">
           </div>
 <?php
