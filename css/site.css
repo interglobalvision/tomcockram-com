@@ -941,6 +941,7 @@ video {
 }
 .slider-img {
   max-height: 100%;
+  width: auto;
 }
 .slider-nav {
   position: absolute;
@@ -950,6 +951,12 @@ video {
   z-index: 20;
   box-sizing: border-box;
   padding: 14px;
+}
+.slide-prev {
+  left: 0;
+}
+.slider-next {
+  right: 0;
 }
 .slider-hidden {
   pointer-events: none;
