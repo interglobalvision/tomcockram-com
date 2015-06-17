@@ -10,6 +10,7 @@ var
   siteInit,
   Ajaxy,
   windowHeight = $(window).height(),
+  windowWidth = $(window).width(),
   animationSpeed = 700,
   slideMargin = parseInt( $('#header').css('padding-top'), 10 ),
   headerTop = $('#header').offset().top,
@@ -158,9 +159,11 @@ siteInit = function() {
 
     $('.js-single-masonry-item').on({
       click: function() {
-        var index = $(this).data('index');
+        if (windowWidth > 468) {
+          var index = $(this).data('index');
 
-        singleProject.openSlideshow(index);
+          singleProject.openSlideshow(index);
+        }
       },
     });
 
@@ -198,6 +201,7 @@ siteInit = function() {
     // RESIZE
     $(window).on('resize', function() {
       windowHeight = $(window).height();
+      windowWidth = $(window).width();
       headerHeight = $('#header').outerHeight();
       slideMargin = parseInt( $('#header').css('padding-top'), 10 );
       sliderHeight = windowHeight - headerHeight - slideMargin;
