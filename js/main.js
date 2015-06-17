@@ -7,100 +7,14 @@ function l(data) {
 }
 
 var
+  siteInit,
+  Ajaxy,
   windowHeight = $(window).height(),
   animationSpeed = 700,
   slideMargin = parseInt( $('#header').css('padding-top'), 10 ),
   headerTop = $('#header').offset().top,
   headerHeight = $('#header').outerHeight(),
   sliderHeight = windowHeight - headerHeight - slideMargin;
-
-// AJAX
-Ajaxy = {
-  init: function() {
-    var _this = this;
-    var ajaxyLinks = 'a.ajax-link';
-
-    if( $('body').hasClass('page') || $('body').hasClass('category') ) {
-      ajaxyLinks += ', .js-menu-filter';
-    }
-
-    // Find all ajaxy links
-    var $ajaxyLinks = $(ajaxyLinks);
-
-    $(ajaxyLinks).click( function(event) {
-      event.preventDefault();
-
-      var url = event.currentTarget.href;
-
-      $('#loading').addClass('on');
-      $('#main-content').addClass('main-content-hidden');
-      $('#header').addClass('header-hidden');
-      _this.ajaxLoad(url);
-
-    });
-
-    // For back button
-    window.onpopstate = function(event) {
-      _this.ajaxLoad(document.location.origin + document.location.pathname);
-    };
-  },
-
-  ajaxLoad: function(url) {
-    var _this = this;
-
-    $.ajax(url, {
-      beforeSend: function() {
-        _this.ajaxBefore();
-      },
-
-      dataType: 'html',
-      error: function(jqXHR, textStatus, errorThrown) {
-        _this.ajaxErrorHandler(jqXHR, textStatus, errorThrown);
-      },
-
-      success: function(data) {
-        _this.ajaxSuccess(data, url);
-        setTimeout( function() {
-          $('#main-content').removeClass('main-content-hidden');
-          $('#header').removeClass('header-hidden');
-          $('#loading').removeClass('on');
-        }, animationSpeed);
-      },
-    });
-  },
-
-  ajaxBefore: function() {
-  },
-
-  ajaxErrorHandler: function(jqXHR, textStatus, errorThrown) {
-  },
-
-  ajaxSuccess: function(data,url) {
-
-    // Convert data into proper html to be able to fully parse thru jQuery
-    var respHtml = document.createElement('html');
-
-    respHtml.innerHTML = data;
-
-    // Get changes: body classes, page title, main content, header
-    var $bodyClasses = $('body', respHtml).attr('class');
-    var $title = $('title', respHtml).text();
-    var $header = $('#header', data);
-    var $content = $('#main-content', respHtml);
-
-    // Push new history state and update title
-    history.pushState(null, $title, url);
-    document.title = $title;
-
-    // Update with new content and classes
-    $('body').removeAttr('class').addClass($bodyClasses);
-    $('#main-content').html($content.html());
-    $('#header').html($header.html());
-
-    // Rebind initial JS
-    siteInit();
-  },
-};
 
 /*
  * siteInit()
@@ -301,6 +215,94 @@ siteInit = function() {
     });
 
   });
+};
+
+// AJAX
+Ajaxy = {
+  init: function() {
+    var _this = this;
+    var ajaxyLinks = 'a.ajax-link';
+
+    if( $('body').hasClass('page') || $('body').hasClass('category') ) {
+      ajaxyLinks += ', .js-menu-filter';
+    }
+
+    // Find all ajaxy links and bind ajax event
+    $(ajaxyLinks).click( function(event) {
+      event.preventDefault();
+
+      var url = event.currentTarget.href;
+
+      $('#loading').addClass('on');
+      $('#main-content').addClass('main-content-hidden');
+      $('#header').addClass('header-hidden');
+      _this.ajaxLoad(url);
+
+    });
+
+    // For back button
+    window.onpopstate = function() {
+      _this.ajaxLoad(document.location.origin + document.location.pathname);
+    };
+  },
+
+  ajaxLoad: function(url) {
+    var _this = this;
+
+    $.ajax(url, {
+      beforeSend: function() {
+        _this.ajaxBefore();
+      },
+
+      dataType: 'html',
+      error: function(jqXHR, textStatus) {
+        _this.ajaxErrorHandler(jqXHR, textStatus);
+      },
+
+      success: function(data) {
+        _this.ajaxSuccess(data, url);
+        setTimeout( function() {
+          $('#main-content').removeClass('main-content-hidden');
+          $('#header').removeClass('header-hidden');
+          $('#loading').removeClass('on');
+        }, animationSpeed);
+      },
+    });
+  },
+
+  ajaxBefore: function() {
+  },
+
+  ajaxErrorHandler: function(jqXHR, textStatus) {
+    alert(textStatus);
+    l(jqXHR);
+  },
+
+  ajaxSuccess: function(data,url) {
+
+    // Convert data into proper html to be able to fully parse thru jQuery
+    var respHtml = document.createElement('html');
+
+    respHtml.innerHTML = data;
+
+    // Get changes: body classes, page title, main content, header
+    var $bodyClasses = $('body', respHtml).attr('class');
+    var $title = $('title', respHtml).text();
+    var $header = $('#header', data);
+    var $content = $('#main-content', respHtml);
+
+    // Push new history state and update title
+    history.pushState(null, $title, url);
+    document.title = $title;
+
+    // Update with new content and classes
+    $('body').removeAttr('class').addClass($bodyClasses);
+    $('#main-content').html($content.html());
+    $('#header').html($header.html());
+
+    // Rebind initial JS
+    siteInit();
+  },
 };
 
 siteInit();
