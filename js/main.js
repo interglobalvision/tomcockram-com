@@ -21,8 +21,11 @@ Ajaxy = {
     var ajaxyLinks = 'a.ajax-link';
 
     if( $('body').hasClass('page') || $('body').hasClass('category') ) {
-      ajaxyLinks += ', .menu-item a';
+      ajaxyLinks += ', .js-menu-filter';
     }
+
+    // Find all ajaxy links
+    var $ajaxyLinks = $(ajaxyLinks);
 
     $(ajaxyLinks).click( function(event) {
       event.preventDefault();
