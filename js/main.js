@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document */
+/* global $, jQuery, document, Ajaxy, siteInit */
 
 function l(data) {
   'use strict';
@@ -24,9 +24,7 @@ Ajaxy = {
       ajaxyLinks += ', .js-menu-filter';
     }
 
-    // Find all ajaxy links
-    var $ajaxyLinks = $(ajaxyLinks);
-
+    // Find all ajaxy links and bind ajax event
     $(ajaxyLinks).click( function(event) {
       event.preventDefault();
 
@@ -40,7 +38,7 @@ Ajaxy = {
     });
 
     // For back button
-    window.onpopstate = function(event) {
+    window.onpopstate = function() {
       _this.ajaxLoad(document.location.origin + document.location.pathname);
     };
   },
@@ -54,8 +52,8 @@ Ajaxy = {
       },
 
       dataType: 'html',
-      error: function(jqXHR, textStatus, errorThrown) {
-        _this.ajaxErrorHandler(jqXHR, textStatus, errorThrown);
+      error: function(jqXHR, textStatus) {
+        _this.ajaxErrorHandler(jqXHR, textStatus);
       },
 
       success: function(data) {
@@ -72,7 +70,7 @@ Ajaxy = {
   ajaxBefore: function() {
   },
 
-  ajaxErrorHandler: function(jqXHR, textStatus, errorThrown) {
+  ajaxErrorHandler: function(jqXHR, textStatus) {
   },
 
   ajaxSuccess: function(data,url) { 
