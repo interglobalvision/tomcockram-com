@@ -86,8 +86,8 @@ Ajaxy = {
     var $content = $('#main-content', respHtml);
 
     // Push new history state and update title
-    history.pushState(null, title, url);
-    document.title = title;
+    history.pushState(null, $title, url);
+    document.title = $title;
 
     // Update with new content and classes
     $('body').removeAttr('class').addClass($bodyClasses);
