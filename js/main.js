@@ -18,8 +18,13 @@ var
 Ajaxy = {
   init: function() {
     var _this = this;
+    var ajaxyLinks = 'a.ajax-link';
 
-    $('a.ajax-link').click( function(event) {
+    if( $('body').hasClass('page') ) {
+      ajaxyLinks += ', .menu-item a';
+    }
+
+    $(ajaxyLinks).click( function(event) {
       event.preventDefault();
 
       var url = event.currentTarget.href;
@@ -68,16 +73,28 @@ Ajaxy = {
   },
 
   ajaxSuccess: function(data,url) { 
-    var title = $(data)[5].innerText;
-    var content = $(data).find('#main-content');
-    var header = $(data).find('#header');
 
+    // Convert data into proper html to be able to fully parse thru jQuery
+    var respHtml = document.createElement('html');
+
+    respHtml.innerHTML = data;
+
+    // Get changes: body classes, page title, main content, header
+    var $bodyClasses = $('body', respHtml).attr('class');
+    var $title = $('title', respHtml).text();
+    var $header = $('#header', data);
+    var $content = $('#main-content', respHtml);
+
+    // Push new history state and update title
     history.pushState(null, title, url);
     document.title = title;
 
-    $('#main-content').html(content.html());
-    $('#header').html(header.html());
+    // Update with new content and classes
+    $('body').removeAttr('class').addClass($bodyClasses);
+    $('#main-content').html($content.html());
+    $('#header').html($header.html());
 
+    // Rebind initial JS
     siteInit();
   },
 };
@@ -156,23 +173,24 @@ siteInit = function() {
     }
 
     // MENU FILTERS
+    if( $('body').hasClass('home') ) {
+      $('.js-menu-filter').on({
+        click: function(e) {
+          e.preventDefault();
+          var target = $(this).data('target').toLowerCase();
 
-    $('.js-menu-filter').on({
-      click: function(e) {
-        e.preventDefault();
-        var target = $(this).data('target').toLowerCase();
+          if (target === 'all') {
+            $('.post').show();
+            $('.js-masonry-container').masonry();
+          } else {
+            $('.post').hide();
+            $('.category-' + target).show();
+            $('.js-masonry-container').masonry();
+          }
 
-        if (target === 'all') {
-          $('.post').show();
-          $('.js-masonry-container').masonry();
-        } else {
-          $('.post').hide();
-          $('.category-' + target).show();
-          $('.js-masonry-container').masonry();
-        }
-
-      },
-    });
+        },
+      });
+    }
 
     // MASONRY
     if ( $('.js-masonry-container').length ) {
