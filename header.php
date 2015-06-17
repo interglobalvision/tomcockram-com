@@ -89,7 +89,7 @@
     $blog_url = IGV_get_option('_igv_blog_url');
     if (! empty($blog_url)) {
 ?>
-              <li class="menu-item"><a href="<?php echo $blog_url; ?>">Blog</a></li>
+              <li class="menu-item"><a target="_blank" href="<?php echo $blog_url; ?>">Blog</a></li>
 <?php } ?>
             </ul>
           </nav>
