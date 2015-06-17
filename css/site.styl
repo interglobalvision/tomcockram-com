@@ -162,7 +162,7 @@ img
 
 .mobile-or-tablet
   video
-    display: nonesl
+    display: none
   .no-video-thumb
     display: block
 
@@ -338,9 +338,6 @@ article.page
 
   // POSTS LOOP
 
-  #close-slider
-    font-size: $font-size-medium
-
   .single-title
     font-size: $font-size-medium
 
@@ -412,9 +409,6 @@ article.page
 
   // POSTS LOOP
 
-  #close-slider
-    font-size: $font-size-medium
-
   .single-title
     font-size: $font-size-medium
 
@@ -438,7 +432,6 @@ article.page
   #footer
     min-height: $margin-basic
 
-  // ipad landscape
 
 @media screen and (max-width: ($col * $cols)+($gutter * $cols))
   $cols = 12
@@ -485,9 +478,6 @@ article.page
 
   // POSTS LOOP
 
-  #close-slider
-    font-size: $font-size-medium
-
   .single-title
     font-size: $font-size-medium
 
@@ -512,11 +502,10 @@ article.page
     min-height: $margin-basic
 
 
-// ipad portait, iphone 6 & 6 plus landscape
-@media screen and (max-width: 780px)
+@media screen and (max-width: 984px)
   $cols = 12
-  $col = 39px
-  $gutter = 12px
+  $col = 46px
+  $gutter = 18px
   .container
     width: ($col * $cols)+($gutter * $cols)
   .col
@@ -558,9 +547,6 @@ article.page
 
   // POSTS LOOP
 
-  #close-slider
-    font-size: $font-size-medium
-
   .single-title
     font-size: $font-size-medium
 
@@ -585,11 +571,10 @@ article.page
     min-height: $margin-basic
 
 
-// iphone 5 landscape
-@media screen and (max-width: 612px)
+@media screen and (max-width: 768px)
   $cols = 12
-  $col = 36px
-  $gutter = 8px
+  $col = 38px
+  $gutter = 14px
   .container
     width: ($col * $cols)+($gutter * $cols)
   .col
@@ -631,9 +616,6 @@ article.page
 
   // POSTS LOOP
 
-  #close-slider
-    font-size: $font-size-medium
-
   .single-title
     font-size: $font-size-medium
 
@@ -658,11 +640,10 @@ article.page
     min-height: $margin-basic
 
 
-// iphone 4 landscape
-@media screen and (max-width: 528px)
+@media screen and (max-width: 624px)
   $cols = 12
-  $col = 31px
-  $gutter = 8px
+  $col = 28px
+  $gutter = 12px
   .container
     width: ($col * $cols)+($gutter * $cols)
   .col
@@ -678,9 +659,9 @@ article.page
   $margin-basic = ($gutter*2)
   $margin-large = ($gutter*5)
 
-  $font-size-basic = 9px
-  $font-size-medium = 13px
-  $font-size-logo = 17px
+  $font-size-basic = 10px
+  $font-size-medium = 15px
+  $font-size-logo = 21px
 
   // TYPOGRAPHY
 
@@ -704,8 +685,9 @@ article.page
 
   // POSTS LOOP
 
-  #close-slider
-    font-size: $font-size-medium
+  .js-masonry-item
+    min-width: 45% !important
+    margin: $gutter !important
 
   .single-title
     font-size: $font-size-medium
@@ -731,7 +713,6 @@ article.page
     min-height: $margin-basic
 
 
-// iphone 6 & 6 plus portrait
 @media screen and (max-width: 468px)
   $cols = 12
   $col = 21px
@@ -751,22 +732,10 @@ article.page
   $margin-basic = ($gutter*2)
   $margin-large = ($gutter*5)
 
-  $font-size-basic = 8px
-  $font-size-medium = 12px
-  $font-size-logo = 16px
-
-  // TYPOGRAPHY
-
-  body
-    font-size: $font-size-basic
-
   // HEADER
 
   #header
     padding: ( $margin-small / 2 ) 0
-
-  .site-title
-    font-size: $font-size-logo
 
   .menu-item
     margin: 0 ( $margin-small / 2 ) 0 0
@@ -777,11 +746,10 @@ article.page
 
   // POSTS LOOP
 
-  #close-slider
-    font-size: $font-size-medium
-
-  .single-title
-    font-size: $font-size-medium
+  .js-masonry-item
+    min-width: 100% !important
+    box-sizing: border-box
+    margin: ($gutter / 2) 0 !important
 
   // SINGLE
 
@@ -793,18 +761,12 @@ article.page
   .js-masonry-item
     margin-bottom: $margin-small
 
-  // INFO PAGE
-
-  article.page
-    font-size: $font-size-medium
-
   // FOOTER
 
   #footer
     min-height: $margin-basic
 
 
-// iphone 5 portrait, iphone 4 portrait
 @media screen and (max-width: 348px)
   $cols = 12
   $col = 14px
@@ -824,22 +786,10 @@ article.page
   $margin-basic = ($gutter*2)
   $margin-large = ($gutter*5)
 
-  $font-size-basic = 8px
-  $font-size-medium = 10px
-  $font-size-logo = 13px
-
-  // TYPOGRAPHY
-
-  body
-    font-size: $font-size-basic
-
   // HEADER
 
   #header
     padding: ( $margin-small / 2 ) 0
-
-  .site-title
-    font-size: $font-size-logo
 
   .menu-item
     margin: 0 ( $margin-small / 2 ) 0 0
@@ -847,14 +797,6 @@ article.page
   .header-right
     .nav-item
       margin: 0 0 0 ( $margin-small / 2 )
-
-  // POSTS LOOP
-
-  #close-slider
-    font-size: $font-size-medium
-
-  .single-title
-    font-size: $font-size-medium
 
   // SINGLE
 
@@ -865,11 +807,6 @@ article.page
 
   .js-masonry-item
     margin-bottom: $margin-small
-
-  // INFO PAGE
-
-  article.page
-    font-size: $font-size-medium
 
   // FOOTER
 
