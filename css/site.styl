@@ -130,6 +130,10 @@ img
     transition: opacity $animation-speed-basic
     opacity: 0
 
+#header-container
+  height: ($font-size-logo + 12)
+  .row, .col
+    height: 100%
 
 .site-title
   font-size: $font-size-logo
@@ -284,7 +288,7 @@ article.page
   flex-flow: row nowrap
   justify-content: center
   align-items: center
-  animation: 'loading' $animation-speed-basic*2 ease infinite
+  animation: 'loading' ($animation-speed-basic * 2) ease infinite
 
   &.on
     display: flex
@@ -335,6 +339,9 @@ article.page
 
   #header
     padding: ( $margin-small / 2 ) 0
+
+  #header-container
+    height: ($font-size-logo + 12)
 
   .site-title
     font-size: $font-size-logo
@@ -407,6 +414,9 @@ article.page
   #header
     padding: ( $margin-small / 2 ) 0
 
+  #header-container
+    height: ($font-size-logo + 12)
+
   .site-title
     font-size: $font-size-logo
 
@@ -475,6 +485,9 @@ article.page
 
   #header
     padding: ( $margin-small / 2 ) 0
+
+  #header-container
+    height: ($font-size-logo + 12)
 
   .site-title
     font-size: $font-size-logo
@@ -545,6 +558,9 @@ article.page
   #header
     padding: ( $margin-small / 2 ) 0
 
+  #header-container
+    height: ($font-size-logo + 12)
+
   .site-title
     font-size: $font-size-logo
 
@@ -613,6 +629,9 @@ article.page
 
   #header
     padding: ( $margin-small / 2 ) 0
+
+  #header-container
+    height: ($font-size-logo + 12)
 
   .site-title
     font-size: $font-size-logo
@@ -686,6 +705,9 @@ article.page
   #header
     padding: ( $margin-small / 2 ) 0
 
+  #header-container
+    height: ($font-size-logo + 12)
+
   .site-title
     font-size: $font-size-logo
 
@@ -756,7 +778,6 @@ article.page
   .header-right
     .nav-item
       margin: 0 0 0 ( $margin-small / 2 )
-
 
   #splash-title
     font-size: 5em

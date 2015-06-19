@@ -59,47 +59,55 @@
 
   <!-- start content -->
   <header id="header">
-    <div class="container">
+    <div id="header-container" class="container">
       <div class="row">
         <div class="col col4">
+          <div class="u-holder">
+            <div class="u-held">
 <?php if (is_single()) { ?>
-          <h1 class="single-title"><a href="<?php the_permalink(); ?>" class="ajax-link"><?php the_title(); ?></a></h1>
+             <h1 class="single-title"><a href="<?php the_permalink(); ?>" class="ajax-link"><?php the_title(); ?></a></h1>
 <?php } else { ?>
-          <nav>
-            <ul>
-              <li class="menu-item"><a class="js-menu-filter" data-target="all" href="<?php echo home_url(); ?>">All</a></li>
-              <?php
-              wp_nav_menu(array(
-                'theme_location'  => 'category_menu',
-                'container'       => '',
-                'items_wrap'      => '%3$s',
-              )); ?>
-            </ul>
-          </nav>
+              <nav>
+                <ul>
+                  <li class="menu-item"><a class="js-menu-filter" data-target="all" href="<?php echo home_url(); ?>">All</a></li>
+                  <?php
+                  wp_nav_menu(array(
+                    'theme_location'  => 'category_menu',
+                    'container'       => '',
+                    'items_wrap'      => '%3$s',
+                  )); ?>
+                </ul>
+              </nav>
 <?php } ?>
+            </div>
+          </div>
         </div>
         <div class="col col4">
           <h1 class="site-title"><a href="<?php echo home_url(); ?>" class="ajax-link"><?php bloginfo('name'); ?></a></h1>
         </div>
         <div class="col col4">
+          <div class="u-holder">
+            <div class="u-held">
 <?php if (is_single()) { ?>
-          <div class="header-right">
-            <a id="close-single" class="close-x u-inline-block ajax-link" href="<?php echo home_url(); ?>">&times;</a>
-            <div id="close-slider" class="close-x u-inline-block u-pointer u-hidden">&times;</div>
-          </div>
+              <div class="header-right">
+                <a id="close-single" class="close-x u-inline-block ajax-link" href="<?php echo home_url(); ?>">&times;</a>
+                <div id="close-slider" class="close-x u-inline-block u-pointer u-hidden">&times;</div>
+              </div>
 <?php } else { ?>
-          <nav class="header-right">
-            <ul>
-              <li class="menu-item"><a href="<?php echo get_permalink(get_id_by_slug('info')); ?>" class="ajax-link">Info</a></li>
+              <nav class="header-right">
+                <ul>
+                  <li class="menu-item"><a href="<?php echo get_permalink(get_id_by_slug('info')); ?>" class="ajax-link">Info</a></li>
 <?php
     $blog_url = IGV_get_option('_igv_blog_url');
     if (! empty($blog_url)) {
 ?>
               <li class="menu-item"><a target="_blank" href="<?php echo $blog_url; ?>">Blog</a></li>
 <?php } ?>
-            </ul>
-          </nav>
+                </ul>
+              </nav>
 <?php } ?>
+            </div>
+          </div>
         </div>
       </div>
     </div>
