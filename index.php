@@ -36,7 +36,7 @@ if( have_posts() ) {
   if (!empty($meta['_igv_webm'][0]) && !empty($meta['_igv_mp4'][0])) {
     $thumb_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'index-thumb');
 ?>
-                  <video autoplay loop poster="<?php echo $thumb_img[0]; ?>">
+                  <video loop poster="<?php echo $thumb_img[0]; ?>">
                     <source src="<?php echo $meta['_igv_webm'][0]; ?>" type='video/webm'/>
                     <source src="<?php echo $meta['_igv_mp4'][0]; ?>" type='video/mp4'/>
                   </video>

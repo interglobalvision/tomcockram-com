@@ -127,6 +127,18 @@ siteInit = function() {
       });
     }
 
+    if ($('video').length) {
+      $('video').on({
+        'mouseenter': function() {
+          this.play();
+        },
+
+        'mouseleave': function() {
+          this.pause();
+        },
+      });
+    }
+
     //SLIDER
     if ( $('.slider-content').length ) {
       $('.slider-item').css('height', sliderHeight );
