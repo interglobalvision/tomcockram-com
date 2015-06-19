@@ -48,7 +48,7 @@
   <div id="splash" class="u-pointer" style="background-image: url(<?php echo $splash; ?>)">
     <div class="u-holder">
       <div class="u-held u-align-center">
-        <h2 id="splash-title" <?php if (!empty($splash_title_colour)) {echo 'style="color:' . $splash_title_colour . ';"';} ?>><?php bloginfo('name'); ?></h2>
+        <h1 id="splash-title" <?php if (!empty($splash_title_colour)) {echo 'style="color:' . $splash_title_colour . ';"';} ?>><?php bloginfo('name'); ?></h1>
       </div>
     </div>
   </div>
