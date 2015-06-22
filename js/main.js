@@ -80,6 +80,13 @@ siteInit = function() {
       });
 
       $('#splash').on('click', function() {
+        $(window).disablescroll({
+          handleScrollbar: false,
+        });
+        setTimeout(function() {
+          $(window).disablescroll('undo');
+        }, animationSpeed);
+
         $('html, body').animate({scrollTop: $('#main-container').offset().top,}, animationSpeed);
       });
 
