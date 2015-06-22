@@ -74,14 +74,16 @@ if( have_posts() ) {
           <div class="slider-nav slider-prev u-pointer">
             <div class="u-holder">
               <div class="u-held">
-                &larr;
+<!--                 &larr; -->
+                <span id="rotate">&#9654;</span>
               </div>
             </div>
           </div>
           <div class="slider-nav slider-next u-pointer u-align-right">
             <div class="u-holder">
               <div class="u-held">
-                &rarr;
+<!--                 &rarr; -->
+                &#9654;
               </div>
             </div>
           </div>
