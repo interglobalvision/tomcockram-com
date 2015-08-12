@@ -30,12 +30,15 @@ siteInit = function() {
   $('.cycle-slideshow').cycle();
   var singleProject = {
     openSlideshow: function(slide) {
+      var _this = this;
+
       if ($('.slider-content').hasClass('slider-hidden')) {
         var delay;
 
         $('.cycle-slideshow').cycle('goto', slide);
         $('.masonry-content').addClass('masonry-hidden');
         $('#single-vimeo-embed').addClass('vimeo-hidden');
+        _this.lazyloadSlideshow();
 
         delay = setTimeout(function() {
           $('.masonry-content').hide();
@@ -63,11 +66,13 @@ siteInit = function() {
     },
 
     lazyloadSlideshow: function() {
-      $('.js-lazyload-slideshow').each(function() {
-        var $this = $(this),
-          src = $this.data('src');
+      $('.cycle-slideshow').imagesLoaded( function() {
+        $('.js-lazyload-slideshow').each(function() {
+          var $this = $(this),
+            src = $this.data('src');
 
-        $this.attr('src', src);
+          $this.attr('src', src);
+        });
       });
     },
   };

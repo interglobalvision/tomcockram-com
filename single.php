@@ -58,16 +58,29 @@ if( have_posts() ) {
             data-cycle-next=".slider-next"
             data-cycle-slides=".slider-item">
 <?php
+      $i = 0;
       foreach ($images as $image) {
 ?>
             <div class="slider-item">
               <div class="u-holder">
                 <div class="u-held">
-                  <img src="<?php echo $image['sizes']['single-full']; ?>" class="slider-img">
+                  <img
+<?php
+        if ($i > 10) {
+?>
+                  data-src="<?php echo $image['sizes']['single-full']; ?>" class="js-lazyload-slideshow slider-img">
+<?php
+        } else {
+?>
+                  src="<?php echo $image['sizes']['single-full']; ?>" class="slider-img">
+<?php
+        }
+?>
                 </div>
               </div>
             </div>
 <?php
+      $i++;
       }
 ?>
           </div>
