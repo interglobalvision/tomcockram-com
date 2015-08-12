@@ -174,6 +174,10 @@ function save_vimeo_thumb( $post_id ) {
   // Sanitize vimeo ID input
   $vimeo_id = sanitize_text_field( $_POST['_igv_vimeo'] );
 
+  if (empty($vimeo_id)) {
+    return;
+  }
+
   $api_url = 'https://api.vimeo.com/videos/' . $vimeo_id;
 
   if (!function_exists('curl_init')){
