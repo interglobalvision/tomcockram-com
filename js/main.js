@@ -69,6 +69,12 @@ siteInit = function() {
     // SPLASH
     if ($('#splash').length) {
 
+      var splashTimeout = setTimeout(function() {
+        $('html, body').animate({
+            scrollTop: $('#main-container').offset().top,
+        }, animationSpeed);
+      }, 3000);
+
       $('#splash').height(windowHeight);
 
       $('#main-container').removeClass('u-hidden').css('min-height', windowHeight);
@@ -94,6 +100,7 @@ siteInit = function() {
         $('#splash').remove();
         $('.splash-margin').css('margin-top', 0);
         $(window).scrollTop(0);
+        clearTimeout(splashTimeout);
       };
     }
 
