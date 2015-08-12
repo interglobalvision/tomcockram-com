@@ -61,6 +61,15 @@ siteInit = function() {
         $('#close-single').removeClass('u-hidden');
       }, animationSpeed);
     },
+
+    lazyloadSlideshow: function() {
+      $('.js-lazyload-slideshow').each(function() {
+        var $this = $(this),
+          src = $this.data('src');
+
+        $this.attr('src', src);
+      });
+    },
   };
 
   jQuery(document).ready(function () {

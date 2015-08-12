@@ -78,7 +78,12 @@ function my_gallery_shortcode($attr) {
 			$tag = null;
 		}
 
+    if ($i > 10) {
+  		$output .= "<div><img class='js-lazyload-slideshow' data-src='{$img[0]}'{tag}></div>";
+    } else {
 		$output .= "<div><img src='{$img[0]}'{tag}></div>";
+    }
+		$i++;
 		}
 
 	$output .= "</div>\n";
