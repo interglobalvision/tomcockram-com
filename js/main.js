@@ -267,9 +267,10 @@ Ajaxy = {
     var _this = this;
     var ajaxyLinks = 'a.ajax-link';
 
-    if( $('body').hasClass('page') || $('body').hasClass('category') ) {
-      ajaxyLinks += ', .js-menu-filter';
+    if( $('body').hasClass('page') || $('body').hasClass('blog') || $('body').hasClass('category') ) {
+      ajaxyLinks += ', .js-menu-filter, #pagination a';
     }
+
 
     // Find all ajaxy links and bind ajax event
     $(ajaxyLinks).click( function(event) {
