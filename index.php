@@ -14,7 +14,7 @@ get_header();
 <?php
 if( have_posts() ) {
 ?>
-        <div class="js-masonry-container">
+        <div class="js-masonry-container" id="feed-container">
 <?php
   while( have_posts() ) {
     the_post();

@@ -15,7 +15,9 @@ var
   slideMargin = parseInt( $('#header').css('padding-top'), 10 ),
   headerTop = $('#header').offset().top,
   headerHeight = $('#header').outerHeight(),
-  sliderHeight = windowHeight - headerHeight - slideMargin;
+  sliderHeight = windowHeight - headerHeight - slideMargin,
+  $older = null,
+  loadingNext = false;
 
 /*
  * siteInit()
@@ -218,6 +220,74 @@ siteInit = function() {
       $('#header').addClass('u-fixed');
     }
     
+    // INFINITE SCROLL
+    $older = $('#pagination a:contains("Older")');
+    if( $('body').hasClass('home') || $('body').hasClass('archive') ) {
+
+      $(window).on('scroll', function() {
+
+        // If reach bottom of document
+        if ($(window).scrollTop() === ($(document).height() - $(window).height() ) && loadingNext === false) {
+
+         // If 'Older' pagination exist
+          if( $older.length !== 0 ) {
+
+            var url = $older.attr('href');
+            
+            $.ajax(url, {
+              beforeSend: function() {
+                // Hide pagination
+                $('#pagination').fadeOut('50');
+
+                // Show loading
+                $('.loading-more').fadeIn('100');
+
+              },
+
+              dataType: 'html',
+              error: function(jqXHR, textStatus) {
+                loadingNext = false;
+                console.error(textStatus);
+              },
+
+              success: function(data) {
+
+                // Convert data into proper html to be able to fully parse thru jQuery
+                var respHtml = document.createElement('html');
+
+                respHtml.innerHTML = data;
+
+                // Get changes: body classes, page title, main content, header
+                var $bodyClasses = $('body', respHtml).attr('class');
+                var $items = $('.feed-item', respHtml);
+                var $pagination = $('#pagination', respHtml);
+
+                // Update with new content and classes
+                $('body').removeAttr('class').addClass($bodyClasses);
+                //$('#feed-container').append($items).masonry('appended', $items, true);
+               // $('#feed-container').masonry().append($items).masonry('appended', $items, true).masonry('reload');
+                $('#feed-container').masonry().append($items).masonry('appended', $items, true).masonry();
+
+                // Update pagination
+                $('#pagination').replaceWith($pagination);
+                $older = $('#pagination a:contains("Older")');
+
+                loadingNext = false;
+              },
+              complete: function() {
+                // Hide pagination
+                $('#pagination').fadeIn('100');
+
+                // Show loading
+                $('.loading-more').fadeOut('50');
+              }
+            });
+            loadingNext = true;
+          }
+        }
+      });
+    }
+
     // RESIZE
     $(window).on('resize', function() {
       windowHeight = $(window).height();
@@ -250,7 +320,6 @@ Ajaxy = {
     if( $('body').hasClass('page') || $('body').hasClass('blog') || $('body').hasClass('category') ) {
       ajaxyLinks += ', .js-menu-filter, #pagination a';
     }
-
 
     // Find all ajaxy links and bind ajax event
     $(ajaxyLinks).click( function(event) {

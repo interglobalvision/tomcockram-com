@@ -21,6 +21,7 @@ if ($next) {
       </div>
     </div>
   </nav>
+  <div class="loading-more"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/preloader.gif"></div>
 <?php
 }
 ?>

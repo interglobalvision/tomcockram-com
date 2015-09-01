@@ -903,6 +903,10 @@ video {
   max-width: 100%;
   height: auto;
 }
+.loading-more {
+  display: none;
+  text-align: center;
+}
 #single-vimeo-embed {
   margin-bottom: 56px;
   opacity: 1;
