@@ -24,6 +24,7 @@ for col in 1..$cols
 // VARIABLES
 
 $margin-small = ($gutter)
+$margin-smaller = ($gutter * .666)
 $margin-tiny = ($gutter / 2)
 $margin-basic = ($gutter * 2)
 $margin-large = ($gutter * 5)
@@ -113,7 +114,7 @@ img
   top: 0
   position: absolute
   width: 100%
-  padding: ( $margin-small / 2 ) 0
+  padding: $margin-tiny 0 $margin-smaller 0
   background-color: $color-white-soft
   z-index: 5
 
@@ -351,7 +352,7 @@ article.page
   // HEADER
 
   #header
-    padding: ( $margin-small / 2 ) 0
+    padding: $margin-tiny 0 $margin-smaller 0
 
   #header-container
     height: ($font-size-logo + 12)
@@ -425,7 +426,7 @@ article.page
   // HEADER
 
   #header
-    padding: ( $margin-small / 2 ) 0
+    padding: $margin-tiny 0 $margin-smaller 0
 
   #header-container
     height: ($font-size-logo + 12)
@@ -497,7 +498,7 @@ article.page
   // HEADER
 
   #header
-    padding: ( $margin-small / 2 ) 0
+    padding: $margin-tiny 0 $margin-smaller 0
 
   #header-container
     height: ($font-size-logo + 12)
@@ -569,7 +570,7 @@ article.page
   // HEADER
 
   #header
-    padding: ( $margin-small / 2 ) 0
+    padding: $margin-tiny 0 $margin-smaller 0
 
   #header-container
     height: ($font-size-logo + 12)
@@ -641,7 +642,7 @@ article.page
   // HEADER
 
   #header
-    padding: ( $margin-small / 2 ) 0
+    padding: $margin-tiny 0 $margin-smaller 0
 
   #header-container
     height: ($font-size-logo + 12)
@@ -716,7 +717,7 @@ article.page
   // HEADER
 
   #header
-    padding: ( $margin-small / 2 ) 0
+    padding: $margin-tiny 0 $margin-smaller 0
 
   #header-container
     height: ($font-size-logo + 12)
@@ -782,7 +783,7 @@ article.page
   // HEADER
 
   #header
-    padding: ( $margin-small / 2 ) 0
+    padding: $margin-tiny 0 $margin-smaller 0
 
   .menu-item
     margin: 0 ( $margin-small / 2 ) 0 0
@@ -839,7 +840,7 @@ article.page
   // HEADER
 
   #header
-    padding: ( $margin-small / 2 ) 0
+    padding: $margin-tiny 0 $margin-smaller 0
 
   .menu-item
     margin: 0 ( $margin-small / 2 ) 0 0

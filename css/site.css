@@ -819,7 +819,7 @@ img {
   top: 0;
   position: absolute;
   width: 100%;
-  padding: 14px 0;
+  padding: 14px 0 18.648px 0;
   background-color: #fdfdfd;
   z-index: 5;
 }
@@ -1067,7 +1067,7 @@ article.page {
     font-size: 15px;
   }
   #header {
-    padding: 16px 0;
+    padding: 14px 0 18.648px 0;
   }
   #header-container {
     height: 52px;
@@ -1145,7 +1145,7 @@ article.page {
     font-size: 15px;
   }
   #header {
-    padding: 17px 0;
+    padding: 14px 0 18.648px 0;
   }
   #header-container {
     height: 52px;
@@ -1223,7 +1223,7 @@ article.page {
     font-size: 15px;
   }
   #header {
-    padding: 12px 0;
+    padding: 14px 0 18.648px 0;
   }
   #header-container {
     height: 52px;
@@ -1301,7 +1301,7 @@ article.page {
     font-size: 12px;
   }
   #header {
-    padding: 9px 0;
+    padding: 14px 0 18.648px 0;
   }
   #header-container {
     height: 36px;
@@ -1379,7 +1379,7 @@ article.page {
     font-size: 10px;
   }
   #header {
-    padding: 7px 0;
+    padding: 14px 0 18.648px 0;
   }
   #header-container {
     height: 33px;
@@ -1460,7 +1460,7 @@ article.page {
     font-size: 10px;
   }
   #header {
-    padding: 6px 0;
+    padding: 14px 0 18.648px 0;
   }
   #header-container {
     height: 33px;
@@ -1539,7 +1539,7 @@ article.page {
     width: 340px;
   }
   #header {
-    padding: 4px 0;
+    padding: 14px 0 18.648px 0;
   }
   .menu-item {
     margin: 0 4px 0 0;
@@ -1610,7 +1610,7 @@ article.page {
     width: 300px;
   }
   #header {
-    padding: 6px 0;
+    padding: 14px 0 18.648px 0;
   }
   .menu-item {
     margin: 0 6px 0 0;
