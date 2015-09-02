@@ -264,12 +264,27 @@ siteInit = function() {
 
                 // Update with new content and classes
                 $('body').removeAttr('class').addClass($bodyClasses);
-                //$('#feed-container').append($items).masonry('appended', $items, true);
-               // $('#feed-container').masonry().append($items).masonry('appended', $items, true).masonry('reload');
-                $('#feed-container').masonry().append($items).masonry('appended', $items, true).masonry();
+
+                // Append new items
+                $('#feed-container').append($items);
+
+                // Run masonry after all images have loaded
+                var itemsCount = 1;
+                $('#feed-container img').load(function() {
+                  itemsCount++;
+                  if( itemsCount === $items.length ) {
+                    $('#feed-container').masonry().append($items).masonry('appended', $items, true).masonry();
+                  }
+                });
 
                 // Update pagination
-                $('#pagination').replaceWith($pagination);
+                if( $('#pagination a:contains("Older")', respHtml).length ) {
+                  $('#pagination').replaceWith($pagination);
+                } else {
+                  // Hide pagination on last paage
+                  $('#pagination').html('');
+                }
+
                 $older = $('#pagination a:contains("Older")');
 
                 loadingNext = false;
