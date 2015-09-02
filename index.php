@@ -74,7 +74,6 @@ if( have_posts() ) {
   </section>
 
   <?php get_template_part('partials/pagination'); ?>
-<!-- >>> what we doing about pagination? -->
 
 <!-- end main-content -->
 

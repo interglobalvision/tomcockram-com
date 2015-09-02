@@ -219,7 +219,7 @@ siteInit = function() {
     } else {
       $('#header').addClass('u-fixed');
     }
-    
+
     // INFINITE SCROLL
     $older = $('#pagination a:contains("Older")');
     if( $('body').hasClass('home') || $('body').hasClass('archive') ) {
@@ -233,7 +233,7 @@ siteInit = function() {
           if( $older.length !== 0 ) {
 
             var url = $older.attr('href');
-            
+
             $.ajax(url, {
               beforeSend: function() {
                 // Hide pagination
@@ -270,6 +270,7 @@ siteInit = function() {
 
                 // Run masonry after all images have loaded
                 var itemsCount = 1;
+
                 $('#feed-container img').load(function() {
                   itemsCount++;
                   if( itemsCount === $items.length ) {
@@ -286,16 +287,16 @@ siteInit = function() {
                 }
 
                 $older = $('#pagination a:contains("Older")');
-
                 loadingNext = false;
               },
+
               complete: function() {
                 // Hide pagination
                 $('#pagination').fadeIn('100');
 
                 // Show loading
                 $('.loading-more').fadeOut('50');
-              }
+              },
             });
             loadingNext = true;
           }
