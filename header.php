@@ -45,11 +45,12 @@
   $splash_images = IGV_get_option('_igv_splash_images');
   $splash_images_length = count($splash_images);
   $random_splash_image = $splash_images[rand(0, ($splash_images_length - 1))];
+  $random_splash_image_url = wp_get_attachment_image_src($random_splash_image['img_id'], 'splash');
 
   $splash_title_colour = IGV_get_option('_igv_splash_title_color');
   if (!empty($random_splash_image) && is_home() && $paged == 1) {
 ?>
-  <div id="splash" class="u-pointer" style="background-image: url(<?php echo $random_splash_image['img']; ?>)">
+  <div id="splash" class="u-pointer" style="background-image: url(<?php echo $random_splash_image_url[0]; ?>)">
     <div class="u-holder">
       <div class="u-held u-align-center">
         <h1 id="splash-title" <?php if (!empty($splash_title_colour)) {echo 'style="color:' . $splash_title_colour . ';"';} ?>><?php bloginfo('name'); ?></h1>
