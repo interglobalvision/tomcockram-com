@@ -20,7 +20,7 @@ if( have_posts() ) {
     the_post();
     $meta = get_post_meta($post->ID);
 ?>
-          <div class="js-masonry-item feed-item col" style="width: <?php echo mt_rand(15, 37); ?>%; margin-bottom: <?php echo mt_rand(30, 100); ?>px; margin-right: <?php echo mt_rand(20, 50); ?>px;">
+          <div class="js-masonry-item feed-item col" style="width: <?php echo mt_rand(9, 31); ?>%; margin-bottom: <?php echo mt_rand(30, 100); ?>px; margin-right: <?php echo mt_rand(20, 50); ?>px;">
             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink() ?>" class="ajax-link">
                 <div class="feed-item-holder">
