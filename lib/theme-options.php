@@ -115,13 +115,6 @@ class IGV_Admin {
     ) );
 
 		$cmb->add_field( array(
-		    'name' => 'Splash Image',
-		    'desc' => '',
-		    'id' => $this->prefix . 'splash',
-		    'type' => 'file'
-		  ) );
-
-		$cmb->add_field( array(
 		    'name' => 'Splash Title Colour',
 		    'desc' => '',
 		    'id' => $this->prefix . 'splash_title_color',
