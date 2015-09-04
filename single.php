@@ -52,7 +52,6 @@ if( have_posts() ) {
       <div class="slider-content slider-hidden">
         <div class="slider-wrapper">
           <div class="slider-container cycle-slideshow"
-            data-cycle-swipe=true
             data-cycle-fx="scrollHorz"
             data-cycle-timeout="0"
             data-cycle-prev=".slider-prev"

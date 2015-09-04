@@ -159,13 +159,11 @@ siteInit = function() {
         switch(e.which) {
           case 37: { // left
             $('.cycle-slideshow').cycle('prev');
-            console.log('prev');
             break;
           }
 
           case 39: { // right
             $('.cycle-slideshow').cycle('next');
-            console.log('next');
             break;
           }
 
@@ -178,7 +176,15 @@ siteInit = function() {
             return; // exit this handler for other keys
           }
         }
+      });
 
+      $('.slider-container').swipe({
+        swipeLeft: function() {
+          $('.cycle-slideshow').cycle('prev');
+        },
+        swipeRight: function() {
+          $('.cycle-slideshow').cycle('next');
+        },
       });
     }
 
