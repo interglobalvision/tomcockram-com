@@ -97,14 +97,22 @@ class IGV_Admin {
 			),
 		) );
 
-		// Set our CMB2 fields
+		$group_field_id = $cmb->add_field( array(
+        'id'          => $this->prefix . 'splash_images',
+        'type'        => 'group',
+        'description' => __( 'Images to randomly choose from for splash', 'cmb' ),
+        'options'     => array(
+            'group_title'   => __( 'Splash Image {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'add_button'    => __( 'Add Another Splash Image', 'cmb' ),
+            'remove_button' => __( 'Remove Splash Image', 'cmb' ),
+        ),
+    ) );
 
-		$cmb->add_field( array(
-		    'name' => 'Splash Image',
-		    'desc' => '',
-		    'id' => $this->prefix . 'splash',
-		    'type' => 'file'
-		  ) );
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Splash Image',
+        'id'   => 'img',
+        'type' => 'file',
+    ) );
 
 		$cmb->add_field( array(
 		    'name' => 'Splash Title Colour',
