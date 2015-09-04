@@ -178,12 +178,12 @@ siteInit = function() {
         }
       });
 
-      $('.slider-container').swipe({
+      $('.slider-wrapper').swipe({
         swipeLeft: function() {
-          $('.cycle-slideshow').cycle('prev');
+          $('.cycle-slideshow').cycle('next');
         },
         swipeRight: function() {
-          $('.cycle-slideshow').cycle('next');
+          $('.cycle-slideshow').cycle('prev');
         },
       });
     }
