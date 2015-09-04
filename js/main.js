@@ -155,14 +155,17 @@ siteInit = function() {
       $('.slider-img').css('max-height', sliderHeight );
 
       $(document).keydown( function(e) {
+        console.log('keydown:', e.which);
         switch(e.which) {
           case 37: { // left
             $('.cycle-slideshow').cycle('prev');
+            console.log('prev');
             break;
           }
 
           case 39: { // right
             $('.cycle-slideshow').cycle('next');
+            console.log('next');
             break;
           }
 
@@ -350,7 +353,7 @@ Ajaxy = {
       $('#loading').addClass('on');
       $('#main-content').addClass('main-content-hidden');
       $('#header').addClass('header-hidden');
-      $("html, body").animate({scrollTop: 0}, animationSpeed);
+      $("html, body").animate({scrollTop: 0,}, animationSpeed);
       _this.ajaxLoad(url);
 
     });
@@ -399,6 +402,12 @@ Ajaxy = {
     var respHtml = document.createElement('html');
 
     respHtml.innerHTML = data;
+
+    // Unbind events
+    $(window).unbind('resize');
+    $(window).unbind('scroll');
+    $(document).unbind('keydown');
+    $('#splash').unbind('click');
 
     // Get changes: body classes, page title, main content, header
     var $bodyClasses = $('body', respHtml).attr('class');
