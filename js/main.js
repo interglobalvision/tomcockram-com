@@ -350,6 +350,7 @@ Ajaxy = {
       $('#loading').addClass('on');
       $('#main-content').addClass('main-content-hidden');
       $('#header').addClass('header-hidden');
+      $("html, body").animate({scrollTop: 0}, animationSpeed);
       _this.ajaxLoad(url);
 
     });
