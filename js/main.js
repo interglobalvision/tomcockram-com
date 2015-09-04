@@ -265,15 +265,20 @@ siteInit = function() {
                 // Update with new content and classes
                 $('body').removeAttr('class').addClass($bodyClasses);
 
+                // Set new item's opacity to 0
+                $items.css({opacity: 0,});
+
                 // Append new items
                 $('#feed-container').append($items);
 
                 // Run masonry after all images have loaded
-                var itemsCount = 1;
+                var itemsCount = 0;
+
                 $('#feed-container img').load(function() {
                   itemsCount++;
                   if( itemsCount === $items.length ) {
-                    $('#feed-container').masonry().append($items).masonry('appended', $items, true).masonry();
+                    $items.css({opacity: 1});
+                    $('#feed-container').masonry('appended', $items);
                   }
                 });
 
@@ -289,13 +294,14 @@ siteInit = function() {
 
                 loadingNext = false;
               },
+
               complete: function() {
                 // Hide pagination
                 $('#pagination').fadeIn('100');
 
                 // Show loading
                 $('.loading-more').fadeOut('50');
-              }
+              },
             });
             loadingNext = true;
           }

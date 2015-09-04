@@ -854,6 +854,10 @@ img {
 .header-right .nav-item {
   margin: 0 0 0 14px;
 }
+.feed-item {
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+}
 .feed-item-holder {
   position: relative;
   display: inline-block;
