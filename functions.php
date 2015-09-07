@@ -41,9 +41,7 @@ register_nav_menus( array(
 	'category_menu' => 'Category Menu',
 ) );
 
-
-//get_template_part( 'lib/gallery' );
-//get_template_part( 'lib/post-types' );
+// Register Meta boxes
 get_template_part( 'lib/meta-boxes' );
 get_template_part( 'lib/theme-options' );
 
@@ -140,6 +138,14 @@ function is_single_type($type, $post) {
     return false;
   }
 }
+
+// ADD CLASS FOR INFINITE SCROLL LINK
+
+function infinite_class() {
+    return 'class="js-infinite-trigger"';
+}
+add_filter('next_posts_link_attributes', 'infinite_class');
+
 
 // MOST POSTS PER PAGE ON HOME
 
