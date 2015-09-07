@@ -145,7 +145,7 @@ function is_single_type($type, $post) {
 
 function posts_per_page( $query ) {
   if ( $query->is_main_query() ) {
-      $query->set( 'posts_per_page', 30 );
+      $query->set( 'posts_per_page', 18 );
   }
 }
 add_action( 'pre_get_posts', 'posts_per_page' );
