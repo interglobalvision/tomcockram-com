@@ -182,6 +182,7 @@ siteInit = function() {
         swipeLeft: function() {
           $('.cycle-slideshow').cycle('next');
         },
+
         swipeRight: function() {
           $('.cycle-slideshow').cycle('prev');
         },
@@ -288,6 +289,7 @@ siteInit = function() {
                   if( itemsCount === $items.length ) {
                     $items.css({opacity: 1,});
                     $('#feed-container').masonry('appended', $items);
+                    $('.feed-item-title').css('visibility', 'visible');
                   }
                 });
 
