@@ -290,6 +290,7 @@ siteInit = function() {
                     $items.css({opacity: 1,});
                     $('#feed-container').masonry('appended', $items);
                     $('.feed-item-title').css('visibility', 'visible');
+                    loadingNext = false;
                   }
                 });
 
@@ -302,7 +303,6 @@ siteInit = function() {
                 }
 
                 $older = $('#pagination a:contains("Older")');
-                loadingNext = false;
               },
 
               complete: function() {
