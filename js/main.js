@@ -230,7 +230,7 @@ siteInit = function() {
     }
 
     // INFINITE SCROLL
-    $older = $('#pagination a:contains("Older")');
+    $older = $('.js-infinite-trigger');
     if( $('body').hasClass('home') || $('body').hasClass('archive') ) {
 
       $(window).on('scroll', function() {
@@ -313,14 +313,14 @@ siteInit = function() {
                 });
 
                 // Update pagination
-                if( $('#pagination a:contains("Older")', respHtml).length ) {
+                if( $('.js-infinite-trigger', respHtml).length ) {
                   $('#pagination').replaceWith($pagination);
                 } else {
                   // Hide pagination on last paage
                   $('#pagination').html('');
                 }
 
-                $older = $('#pagination a:contains("Older")');
+                $older = $('.js-infinite-trigger');
               },
 
               complete: function() {
