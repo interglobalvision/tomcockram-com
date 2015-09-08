@@ -155,7 +155,6 @@ siteInit = function() {
       $('.slider-img').css('max-height', sliderHeight );
 
       $(document).keydown( function(e) {
-        console.log('keydown:', e.which);
         switch(e.which) {
           case 37: { // left
             $('.cycle-slideshow').cycle('prev');
@@ -236,8 +235,9 @@ siteInit = function() {
 
       $(window).on('scroll', function() {
 
+        var scrollOffset = 60;
         // If reach bottom of document
-        if ($(window).scrollTop() === ($(document).height() - $(window).height() ) && loadingNext === false) {
+        if ($(window).scrollTop() + scrollOffset >= $(document).height() - $(window).height() && loadingNext === false) {
 
          // If 'Older' pagination exist
           if( $older.length !== 0 ) {
@@ -246,11 +246,11 @@ siteInit = function() {
 
             $.ajax(url, {
               beforeSend: function() {
-                // Hide pagination
-                $('#pagination').fadeOut('50');
-
                 // Show loading
-                $('.loading-more').fadeIn('100');
+                $('.loading-more').removeClass('hidden');
+
+                // Hide pagination
+                $('#pagination').addClass('hidden');
 
               },
 
@@ -274,9 +274,14 @@ siteInit = function() {
 
                 // Update with new content and classes
                 $('body').removeAttr('class').addClass($bodyClasses);
-
                 // Set new item's opacity to 0
-                $items.css({opacity: 0,});
+                $items.css({
+                  opacity: 0,
+                  position: 'absolute',
+                });
+                
+                // Set new pagination as hidden
+                $pagination.addClass('hidden');
 
                 // Append new items
                 $('#feed-container').append($items);
@@ -287,9 +292,22 @@ siteInit = function() {
                 $('#feed-container img').load(function() {
                   itemsCount++;
                   if( itemsCount === $items.length ) {
+
+                    // Show items
                     $items.css({opacity: 1,});
+
+                    // Re-masonry
                     $('#feed-container').masonry('appended', $items);
+
+                    // Show titles
                     $('.feed-item-title').css('visibility', 'visible');
+
+                    // Show pagination
+                    $('#pagination').removeClass('hidden');
+
+                    // Hide loading
+                    $('.loading-more').addClass('hidden');
+
                     loadingNext = false;
                   }
                 });
@@ -306,11 +324,6 @@ siteInit = function() {
               },
 
               complete: function() {
-                // Hide pagination
-                $('#pagination').fadeIn('100');
-
-                // Show loading
-                $('.loading-more').fadeOut('50');
               },
             });
             loadingNext = true;

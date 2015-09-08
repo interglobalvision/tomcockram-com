@@ -904,9 +904,22 @@ video {
   max-width: 100%;
   height: auto;
 }
+#pagination {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+          transition: opacity 0.2s;
+}
+#pagination.hidden {
+  opacity: 0;
+}
 .loading-more {
-  display: none;
   text-align: center;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+          transition: opacity 0.2s;
+}
+.loading-more.hidden {
+  opacity: 0;
 }
 #single-vimeo-embed {
   margin-bottom: 56px;

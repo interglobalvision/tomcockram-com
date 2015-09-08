@@ -155,7 +155,6 @@ img
 .feed-item
   min-width: 180px
   transition: opacity $animation-speed-basic
-
 .feed-item-holder
   position: relative
   display: inline-block
@@ -198,10 +197,22 @@ video
   height: auto
 
 
+// PAGINATION
+#pagination
+  opacity: 1
+  transition: opacity $animation-speed-quick
+
+  &.hidden
+    opacity: 0
+
 // LOAD MORE POSTS
 .loading-more
-  display: none
   text-align: center
+  opacity: 1
+  transition: opacity $animation-speed-quick
+
+  &.hidden
+    opacity: 0
 
 // SINGLE
 
