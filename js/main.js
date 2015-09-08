@@ -288,10 +288,11 @@ siteInit = function() {
 
                 // Run masonry after all images have loaded
                 var itemsCount = 0;
+                var $itemsImages = $('img', $items);
 
-                $('#feed-container img').load(function() {
+                $itemsImages.load(function() {
                   itemsCount++;
-                  if( itemsCount === $items.length ) {
+                  if( itemsCount === $itemsImages.length ) {
 
                     // Show items
                     $items.css({opacity: 1,});

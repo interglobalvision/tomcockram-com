@@ -19,6 +19,9 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
     $meta = get_post_meta($post->ID);
+    $thumb_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'index-thumb');
+
+    if( $thumb_img ) {
 ?>
           <div class="js-masonry-item feed-item col" style="width: <?php echo mt_rand(11, 31); ?>%; margin-bottom: <?php echo mt_rand(30, 100); ?>px; margin-right: <?php echo mt_rand(20, 50); ?>px;">
             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -33,8 +36,7 @@ if( have_posts() ) {
                   </div>
 
 <?php
-    if (!empty($meta['_igv_webm'][0]) && !empty($meta['_igv_mp4'][0])) {
-      $thumb_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'index-thumb');
+      if (!empty($meta['_igv_webm'][0]) && !empty($meta['_igv_mp4'][0])) {
 ?>
                   <video loop poster="<?php echo $thumb_img[0]; ?>">
                     <source src="<?php echo $meta['_igv_webm'][0]; ?>" type='video/webm'/>
@@ -44,16 +46,16 @@ if( have_posts() ) {
                     <?php the_post_thumbnail( 'index-thumb', 'class=feed-item-img'); ?>
                   </div>
 <?php
-    } else {
-      the_post_thumbnail( 'index-thumb', 'class=feed-item-img');
-    }
+      } else {
+        the_post_thumbnail( 'index-thumb', 'class=feed-item-img');
+      }
 ?>
                 </div>
               </a>
             </article>
           </div>
-
 <?php
+    }
   }
   // END WHILE
 ?>
