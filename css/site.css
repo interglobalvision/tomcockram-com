@@ -819,7 +819,7 @@ img {
   top: 0;
   position: absolute;
   width: 100%;
-  padding: 14px 0 18.648px 0;
+  padding: 18.648px 0 28px 0;
   background-color: #fdfdfd;
   z-index: 5;
 }
@@ -1081,7 +1081,7 @@ article.page {
     font-size: 15px;
   }
   #header {
-    padding: 14px 0 18.648px 0;
+    padding: 32px 0 64px 0;
   }
   #header-container .u-holder {
     min-height: 52px;
@@ -1159,7 +1159,7 @@ article.page {
     font-size: 15px;
   }
   #header {
-    padding: 14px 0 18.648px 0;
+    padding: 34px 0 68px 0;
   }
   #header-container .u-holder {
     min-height: 52px;
