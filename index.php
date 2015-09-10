@@ -64,7 +64,7 @@ if( have_posts() ) {
 } else {
 ?>
         <div class="col col12">
-          <article class="u-alert"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
+          <article class="u-alert"><?php _e('Sorry, no posts matched your criteria'); ?></article>
         </div>
 
 <?php
