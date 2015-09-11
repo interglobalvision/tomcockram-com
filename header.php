@@ -45,7 +45,7 @@
   $splash_images = IGV_get_option('_igv_splash_images');
   $splash_images_length = count($splash_images);
   $random_splash_image = $splash_images[rand(0, ($splash_images_length - 1))];
-  $random_splash_image_url = wp_get_attachment_image_src($random_splash_image['img_id'], 'splash');
+  $random_splash_image_url = wp_get_attachment_image_src($random_splash_image['img_id'], 'single-full');
 
   $splash_title_colour = IGV_get_option('_igv_splash_title_color');
   if (!empty($random_splash_image) && is_home() && $paged == 1) {
